@@ -5,12 +5,31 @@
     background: #5BCFF3;
 }
 #header .inner{
+    position: relative;
     width: 1200px;
     height: 100px;
     margin: auto;
 
 }
+#header .inner .logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 #header .inner .logo img{
-    margin-top: 10px;
-    height: 150px;
+    height: 100px;
+}
+#header .inner .navigation{
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+#header .inner .navigation ul{
+}
+#header .inner .navigation ul li{
+    list-style-type: none;
+    display: inline-block;
+    font-size: 1.5em;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    color: #000;
 }
