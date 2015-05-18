@@ -17,3 +17,33 @@
 .codrops-header .background img{
 
 }
+.slider .arrows {
+    left: 50%;
+    margin-left: -600px;
+    opacity: 0.3;
+    transition: all 0.2s ease 0s;
+    width: 1200px;
+}
+.slider:hover .arrows{
+    opacity: 1;
+}
+.slider .slides ul li .title {
+    position: absolute;
+    left: 50%;
+    width: 1000px;
+    margin-left: -500px;
+    font-family: arial, serif;
+    font-size: 40px;
+    font-weight: 400;
+    top: 10px;
+}
+.slider .slides ul li .text {
+    position: absolute;
+    left: 50%;
+    width: 1000px;
+    margin-left: -500px;
+    font-family: arial, serif;
+    font-size: 30px;
+    font-weight: 400;
+    top: 50px;
+ }
