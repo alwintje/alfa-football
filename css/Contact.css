@@ -13,10 +13,14 @@
     margin: auto;
 }
 #contact{
-    background: #008AAC;
+    color: #000;
+    padding: 10px;
+    max-width: 1210px;
+    background: #fff;
+    margin: auto;
 }
 
 .content .form{
-    max-width: 1200px;
+    max-width: 100%;
     margin: auto;
 }

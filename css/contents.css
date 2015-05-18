@@ -24,10 +24,18 @@
     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
 #played_games{
-    background: #008AAC;
+    color: #000;
+    padding: 10px;
+    max-width: 1210px;
+    background: #fff;
+    margin: auto;
 }
 #upcoming_games{
-    background: #123046;
+    color: #000;
+    padding: 10px;
+    max-width: 1210px;
+    background: #fff;
+    margin: auto;
 }
 /*#played_games .head{*/
     /*border-bottom: 2px solid #fff;*/

@@ -13,14 +13,11 @@
     <div class="content">
         <div class="form">
             <form action="#">
-                <label>Naam:</label><input type="text" class="form-control"/>
-                <label>Naam:</label><input type="text" class="form-control"/>
-                <label>Naam:</label><input type="text" class="form-control"/>
-                <label>Naam:</label><input type="text" class="form-control"/>
+                <label>Naam</label><input type="text" class="form-control"/>
+                <label>Email</label><input type="text" class="form-control"/>
+                <label>bericht</label><input type="text" class="form-control"/>
                 <button class="btn btn-default">Verzend</button>
             </form>
-
         </div>
-
     </div>
 </div>
