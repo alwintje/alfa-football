@@ -18,7 +18,7 @@
 
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
-    <link href="css/content.css" rel="stylesheet" />
+    <link href="css/contents.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
     <link rel="stylesheet" href="css/transitions.php?duration=1000&transition=easeInCirc">
     <link rel="stylesheet" href="css/slider.css">
