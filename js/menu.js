@@ -32,11 +32,21 @@ window.onload = function(){
         for(var i=0;i < elements.length;i++){
 
             if(scrollForElement < elements[i]['topHeight']-121 && scrollForElement > elements[i]['top']-121 ){
+
                 if(history.pushState) {
                     history.pushState(null, null, "#"+elements[i]['id']);
                 }
                 else {
                     location.hash = "#"+elements[i]['id'];
+                }
+                var menuItem = document.querySelector("#header .navigation ul li a[href='#"+elements[i]['id']+"']");
+                //addClass(menuItems,"active");
+                if(menuItem != null && menuItem != undefined){
+                    var menuItems = document.querySelectorAll("#header .navigation ul li a");
+                    for(var j=0;j<menuItems.length;j++){
+                        menuItems[j].setAttribute("class", "");
+                    }
+                    menuItem.setAttribute("class", "active");
                 }
                 //window.location.hash = "#"+elements[i]['id'];
             }
