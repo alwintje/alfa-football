@@ -21,7 +21,7 @@
 }
 #header .inner .navigation{
     position: absolute;
-    top: 40px;
+    top: 30px;
     right: 0;
 }
 #header .inner .navigation ul{
@@ -29,7 +29,10 @@
 #header .inner .navigation ul li{
     list-style-type: none;
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 30px;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
     color: #000;
+}
+#header .inner .navigation ul li:hover{
+
 }
