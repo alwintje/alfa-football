@@ -7,14 +7,14 @@
     width: auto;
     height: auto;
     padding: 20px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.8);
     border: 2px solid #fff;
     -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,0.75);
     -moz-box-shadow: 0 0 20px 0 rgba(0,0,0,0.75);
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.75);
 }
 
-.codrops-header .background img{
+.codrops-header .background img {
 
 }
 .slider .arrows {

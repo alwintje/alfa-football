@@ -16,8 +16,11 @@
         </div>
         <div class="navigation">
             <ul>
-                <li>item 1</li>
-                <li>item 2</li>
+                <li><a href="#" class="active">Home</a> </li>
+
+                <li><a href="#">Gespeelde wedstrijden</a></li>
+                <li><a href="#">Aankomende wedstrijden</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </div>

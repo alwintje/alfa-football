@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
 
     <script src="js/modernizr.custom.js"></script>
+    <script src="js/menu.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <script>
