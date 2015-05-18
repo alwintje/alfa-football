@@ -7,7 +7,7 @@
         </div>
         <header class="codrops-header">
             <div class="background">
-                <h1>Alfa-Football<span>The best website from Europa</span></h1>
+                <img src="img/logo.png"></img><h1><span>The best website from Europa</span></h1>
                 <nav class="codrops-demos">
                     <a class="start-button" href="#">Start</a>
                 </nav>
@@ -20,5 +20,4 @@
     <script>
         new BoxesFx( document.getElementById( 'boxgallery' ) );
     </script>
-
 
