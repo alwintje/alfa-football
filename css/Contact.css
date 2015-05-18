@@ -1,0 +1,22 @@
+.container{
+    min-height: 500px;
+}
+.container .head{
+}
+.container .head h1{
+    list-style-type: none;
+    display: block;
+    font-size: 25px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    position: relative;
+    width: 1200px;
+    margin: auto;
+}
+#contact{
+    background: #008AAC;
+}
+
+.content .form{
+    max-width: 1200px;
+    margin: auto;
+}
