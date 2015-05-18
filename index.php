@@ -15,6 +15,8 @@
     <title>Alfa-football</title>
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <script src="js/modernizr.custom.js"></script>
 </head>
 <body>
     <?php
