@@ -18,6 +18,7 @@
 
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
+    <link href="css/Games.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
     <link rel="stylesheet" href="css/transitions.php?duration=1000&transition=easeInCirc">
     <link rel="stylesheet" href="css/slider.css">
@@ -40,6 +41,7 @@
         require_once($includeFolder."/Start.php");
         require_once($includeFolder."/Header.php");
         require_once($includeFolder."/Content.php");
+        require_once($includeFolder."/Games.php");
     ?>
     <div style="height: 3000px;"></div>
     <?php

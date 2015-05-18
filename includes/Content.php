@@ -23,7 +23,6 @@
 <div class="slider">
     <div class="background">
         <div class="slides">
-            <div class="background-text">
                 <ul>
                     <li data-repeat="no"
                         data-color="#FFF"
@@ -33,10 +32,9 @@
                     <li data-repeat="no"
                         data-color="#FFF"
                         data-title="Item 1"
-                        data-image="blank.jpg"
+                        data-image="img/3.jpg"
                         onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
                 </ul>
-            </div>
         </div>
     </div>
 </div>
