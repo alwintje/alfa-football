@@ -6,10 +6,12 @@
             <div class="panel"><img src="img/4.jpg" alt="Image 4"/></div>
         </div>
         <header class="codrops-header">
-            <h1>Alfa-Football<span>The best website from Europa</span></h1>
-            <nav class="codrops-demos">
-                <a class="start-button" href="#">Start</a>
-            </nav>
+            <div class="background">
+                <h1>Alfa-Football<span>The best website from Europa</span></h1>
+                <nav class="codrops-demos">
+                    <a class="start-button" href="#">Start</a>
+                </nav>
+            </div>
         </header>
 </div><!-- /container -->
 
