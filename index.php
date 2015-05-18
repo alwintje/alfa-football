@@ -47,7 +47,7 @@
         require_once($includeFolder."/Start.php");
         require_once($includeFolder."/Header.php");
         require_once($includeFolder."/Content.php");
-        require_once($includeFolder."/Games.php");
+       // require_once($includeFolder."/Games.php");
         require_once($includeFolder."/Contact.php");
     ?>
     <div style="height: 3000px;"></div>
