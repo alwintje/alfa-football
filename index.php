@@ -50,7 +50,6 @@
         require_once($includeFolder."/Content.php");
         require_once($includeFolder."/Games.php");
     ?>
-    <div style="height: 3000px;"></div>
     <?php
         require_once($includeFolder."/Footer.php");
     ?>
