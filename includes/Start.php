@@ -1,5 +1,4 @@
 <div id="start">
-    <div class="container">
         <div id="boxgallery" class="boxgallery" data-effect="effect-1">
             <div class="panel"><img src="img/1.jpg" alt="Image 1"/></div>
             <div class="panel"><img src="img/2.jpg" alt="Image 2"/></div>
@@ -12,12 +11,12 @@
                 <a class="start-button" href="#">Start</a>
             </nav>
         </header>
-    </div><!-- /container -->
+</div><!-- /container -->
+
     <script src="js/classie.js"></script>
     <script src="js/boxesFx.js"></script>
     <script>
         new BoxesFx( document.getElementById( 'boxgallery' ) );
     </script>
-</div>
 
 
