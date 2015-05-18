@@ -21,19 +21,23 @@
 ?>
 
 <div class="slider">
-    <div class="slides">
-        <ul>
-            <li data-repeat="no"
-                data-color="#FFF"
-                data-title="Item 1"
-                data-image="blank.jpg"
-                onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
-            <li data-repeat="no"
-                data-color="#FFF"
-                data-title="Item 1"
-                data-image="blank.jpg"
-                onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
-        </ul>
+    <div class="background">
+        <div class="slides">
+            <div class="background-text">
+                <ul>
+                    <li data-repeat="no"
+                        data-color="#FFF"
+                        data-title="Item 1"
+                        data-image="img/5.jpg"
+                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                    <li data-repeat="no"
+                        data-color="#FFF"
+                        data-title="Item 1"
+                        data-image="blank.jpg"
+                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 

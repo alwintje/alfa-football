@@ -1,8 +1,9 @@
+/* start button */
 .codrops-header .start-button{
     color: #fff ;
     width: auto;
 }
-
+/* start background */
 .codrops-header .background{
     width: auto;
     height: auto;
@@ -17,6 +18,12 @@
 .codrops-header .background img {
 
 }
+/* slider */
+.slider .background{
+    background-color: #123046  ;
+    height: 100%;
+}
+
 .slider .arrows {
     left: 50%;
     margin-left: -600px;
@@ -47,3 +54,7 @@
     font-weight: 400;
     top: 50px;
  }
+
+.slider .background .background-text{
+    color: #000;
+}
