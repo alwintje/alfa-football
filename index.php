@@ -23,6 +23,11 @@
     <?php
         require_once($includeFolder."/Start.php");
         require_once($includeFolder."/Header.php");
+    ?>
+    <div style="height: 3000px;">
+
+    </div>
+    <?php
         require_once($includeFolder."/Footer.php");
     ?>
 </body>

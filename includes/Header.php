@@ -11,6 +11,6 @@
 
 <div id="header">
     <div class="inner">
-
+        <img src="img/logo.png" />
     </div>
 </div>
