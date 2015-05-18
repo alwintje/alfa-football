@@ -16,6 +16,7 @@
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
     <script src="js/modernizr.custom.js"></script>
 </head>
 <body>
