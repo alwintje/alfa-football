@@ -7,7 +7,7 @@
         </div>
         <header class="codrops-header">
             <div class="background">
-                <img src="img/logo.png"></img><h1><span>The best website from Europa</span></h1>
+                <img src="img/logo_start.png"></img><h1><span>The best website from Europa</span></h1>
                 <nav class="codrops-demos">
                     <a class="start-button" href="#">Start</a>
                 </nav>
