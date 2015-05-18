@@ -38,6 +38,10 @@
 .slider, .slider .slides, .slider .slides ul, .slider .slides ul li{
     height: 600px;
 }
+
+.slider .slides ul li{
+    /*cursor: pointer;*/
+}
 .slider .slides ul li .title {
     position: absolute;
     left: 50%;

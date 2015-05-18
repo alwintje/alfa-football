@@ -30,7 +30,6 @@
     height: 400px;
     float: left;
     transform: translate3d(0px, 0, 0);
-    cursor: pointer;
 }
 .slider .slides ul li .text{
     position: absolute;

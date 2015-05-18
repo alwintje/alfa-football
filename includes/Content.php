@@ -27,23 +27,19 @@
                     <li data-repeat="no"
                         data-color="#FFF"
                         data-title="Item 1"
-                        data-image="img/5.jpg"
-                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                        data-image="img/5.jpg">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
                     <li data-repeat="no"
                         data-color="#FFF"
                         data-title="Item 2"
-                        data-image="img/3.jpg"
-                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                        data-image="img/3.jpg">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
                     <li data-repeat="no"
                         data-color="#FFF"
                         data-title="Item 3"
-                        data-image="img/4.jpg"
-                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                        data-image="img/4.jpg">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
                     <li data-repeat="no"
                         data-color="#FFF"
                         data-title="Item 4"
-                        data-image="img/2.jpg"
-                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                        data-image="img/2.jpg">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
                     <li data-repeat="no"
                         data-color="#FFF"
                         data-title="Item 5"
