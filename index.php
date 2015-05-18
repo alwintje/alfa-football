@@ -13,6 +13,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Alfa-football</title>
+    <link href="css/index.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
 </head>
 <body>
     <?php
