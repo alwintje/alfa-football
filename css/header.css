@@ -10,7 +10,7 @@
     margin: auto;
 
 }
-#header .inner img{
+#header .inner .logo img{
     margin-top: 10px;
     height: 150px;
 }
