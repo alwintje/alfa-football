@@ -7,10 +7,20 @@
  */
 ?>
 <div id="played_games">
-    <h1>Gespeelde wedstrijden</h1>
+    <div class="head">
+        <h1>Gespeelde wedstrijden</h1>
+    </div>
+    <div class="content">
+
+    </div>
 </div>
 
 <div id="upcoming_games">
-    <h1>Aankomende wedstrijden</h1>
+    <div class="head">
+        <h1>Aankomende wedstrijden</h1>
+    </div>
+    <div class="content">
+
+    </div>
 </div>
 

@@ -1,11 +1,35 @@
 #played_games{
-    background: #5BCFF3;
+    background: #008AAC;
     height: 600px ;
 }
 
+#played_games .head h1{
+    list-style-type: none;
+    display: inline-block;
+    font-size: 25px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    padding-left: 25px;
+    left: 50%;
+}
+
+#played_games .head{
+    border-bottom: 2px solid #fff;
+}
 /* upcomin games */
+
+#upcoming_games .head{
+    border-bottom: 2px solid #fff;
+}
 
 #upcoming_games{
     background: #123046;
     height: 600px ;
+}
+
+#upcoming_games .head h1{
+    list-style-type: none;
+    display: inline-block;
+    font-size: 25px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    padding-left: 25px;
 }
