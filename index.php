@@ -1,5 +1,12 @@
 <?php
     $includeFolder = "includes";
+
+   /////////////////////////////////
+  //      BASIS KLEUREN          //
+ //     Licht blauw: #5BCFF3    //
+//    Donker blauw: #123046    //
+////////////////////////////////
+
 ?>
 <!DOCTYPE html>
 <html>
