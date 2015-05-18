@@ -7,9 +7,14 @@
         </div>
         <header class="codrops-header">
             <div class="background">
-                <img src="img/logo_start.png"></img><h1><span>Alwin Kroesen en Yaron Lambers</span></h1>
+                <img src="img/logo_start.png" />
+                <h1>
+                    <span>
+                        Alwin Kroesen en Yaron Lambers
+                    </span>
+                </h1>
                 <nav class="codrops-demos">
-                    <a class="start-button" href="#">Start</a>
+                    <a class="start-button" href="#home" data-scroll>Start</a>
                 </nav>
             </div>
         </header>

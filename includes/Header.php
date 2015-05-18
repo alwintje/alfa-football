@@ -14,10 +14,10 @@
         </div>
         <div class="navigation">
             <ul>
-                <li><a href="#" class="active">Home</a> </li>
-                <li><a href="#">Gespeelde wedstrijden</a></li>
-                <li><a href="#">Aankomende wedstrijden</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home" data-scroll class="active">Home</a> </li>
+                <li><a href="#played_games" data-scroll >Gespeelde wedstrijden</a></li>
+                <li><a href="#upcoming_games" data-scroll >Aankomende wedstrijden</a></li>
+                <li><a href="#contact" data-scroll >Contact</a></li>
             </ul>
         </div>
     </div>

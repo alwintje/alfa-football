@@ -20,7 +20,7 @@
 
 ?>
 
-<div class="slider">
+<div id="home" class="slider">
     <div class="background">
         <div class="slides">
                 <ul>
