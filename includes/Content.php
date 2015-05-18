@@ -20,7 +20,7 @@
 
 ?>
 
-<div id="home" class="slider">
+<div id="home" class="slider scroll-url">
     <div class="background">
         <div class="slides">
                 <ul>
@@ -31,8 +31,23 @@
                         onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
                     <li data-repeat="no"
                         data-color="#FFF"
-                        data-title="Item 1"
+                        data-title="Item 2"
                         data-image="img/3.jpg"
+                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                    <li data-repeat="no"
+                        data-color="#FFF"
+                        data-title="Item 3"
+                        data-image="img/4.jpg"
+                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                    <li data-repeat="no"
+                        data-color="#FFF"
+                        data-title="Item 4"
+                        data-image="img/2.jpg"
+                        onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
+                    <li data-repeat="no"
+                        data-color="#FFF"
+                        data-title="Item 5"
+                        data-image="img/1.jpg"
                         onclick="document.location.href='view.php?id=1'">sakdjsakdjlk alksaj dlkaj lkjasdlkjlkj kj lkjsldkjasd</li>
                 </ul>
         </div>

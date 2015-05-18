@@ -1,4 +1,4 @@
-<div id="start">
+<div id="start" class="scroll-url">
         <div id="boxgallery" class="boxgallery" data-effect="effect-1">
             <div class="panel"><img src="img/1.jpg" alt="Image 1"/></div>
             <div class="panel"><img src="img/2.jpg" alt="Image 2"/></div>

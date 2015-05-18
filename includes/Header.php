@@ -9,8 +9,10 @@
 
 <div id="header">
     <div class="inner">
-        <div class="logo">
-            <img src="img/logo.png" />
+        <div class="logo" >
+            <a href="#start" data-scroll>
+                <img src="img/logo.png" />
+            </a>
         </div>
         <div class="navigation">
             <ul>

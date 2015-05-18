@@ -6,7 +6,7 @@
  * Time: 15:26
  */
 ?>
-<div id="played_games">
+<div id="played_games" class="scroll-url container">
     <div class="head">
         <h1>Gespeelde wedstrijden</h1>
     </div>
@@ -15,7 +15,7 @@
     </div>
 </div>
 
-<div id="upcoming_games">
+<div id="upcoming_games" class="scroll-url container">
     <div class="head">
         <h1>Aankomende wedstrijden</h1>
     </div>
