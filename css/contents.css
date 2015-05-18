@@ -17,6 +17,12 @@
     width: 1200px;
     margin: auto;
 }
+.container .content{
+    position: relative;
+    width: 1200px;
+    margin: auto;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
 #played_games{
     background: #008AAC;
 }

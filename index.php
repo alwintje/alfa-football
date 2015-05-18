@@ -19,11 +19,11 @@
     <link href="css/header.css" rel="stylesheet" />
     <link href="css/Games.css" rel="stylesheet" />
     <link href="css/Contact.css" rel="stylesheet" />
+    <link href="css/contents.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
     <link rel="stylesheet" href="css/transitions.php?duration=1000&transition=easeInCirc">
     <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
-
 
     <script src="js/modernizr.custom.js"></script>
     <script src="js/menu.js"></script>
