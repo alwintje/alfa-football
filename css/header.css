@@ -1,8 +1,15 @@
+#header-pos{
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
 #header{
-    position: static;
+    position: relative;
+    top: 0;
     width: 100%;
     height: 100px;
     background: #5BCFF3;
+    z-index: 2000;
 }
 #header .inner{
     position: relative;

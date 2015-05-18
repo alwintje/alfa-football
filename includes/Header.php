@@ -22,3 +22,6 @@
         </div>
     </div>
 </div>
+<div id="header-pos">
+
+</div>
