@@ -16,6 +16,7 @@
                 <label>Naam</label><input type="text" class="form-control"/>
                 <label>Email</label><input type="text" class="form-control"/>
                 <label>bericht</label><input type="text" class="form-control"/>
+                <br />
                 <button class="btn btn-default">Verzend</button>
             </form>
         </div>

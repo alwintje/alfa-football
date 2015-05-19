@@ -34,27 +34,21 @@ $db->opendb();
     <script src="js/smooth-scroll.js" ></script>
     <script>
         smoothScroll.init({
-            speed: 1000, // Integer. How fast to complete the scroll in milliseconds
-            easing: 'easeInOutCubic', // Easing pattern to use
-            updateURL: false, // Boolean. Whether or not to update the URL with the anchor hash on scroll
-            offset: 120 // Integer. How far to offset the scrolling anchor location in pixels
+            speed: 1000,
+            easing: 'easeInOutCubic',
+            updateURL: false,
+            offset: 120
         });
         var duration = 1000;
-        var transition = 'easeInCirc';// easeInCirc easeInQuad
+        var transition = 'easeInCirc';
     </script>
     <script src="js/slider.js" ></script>
 </head>
 <body>
     <?php
-
         require_once($includeFolder."/Start.php");
         require_once($includeFolder."/Header.php");
         require_once($includeFolder."/Content.php");
-       // require_once($includeFolder."/Games.php");
-        require_once($includeFolder."/Contact.php");
-    ?>
-    <div style="height: 3000px;"></div>
-    <?php
         require_once($includeFolder."/Footer.php");
     ?>
 </body>

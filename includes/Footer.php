@@ -1,7 +1,24 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Alwin
+ * User: yaron
  * Date: 18-5-2015
- * Time: 11:25
+ * Time: 18:47
  */
+?>
+<div id="contact" class="scroll-url container">
+    <div class="head">
+        <h1>Contact</h1>
+    </div>
+    <div class="content">
+        <div class="form">
+            <form action="#">
+                <label>Naam</label><input type="text" class="form-control"/>
+                <label>Email</label><input type="text" class="form-control"/>
+                <label>bericht</label><input type="text" class="form-control"/>
+                <br />
+                <button class="btn btn-default">Verzend</button>
+            </form>
+        </div>
+    </div>
+</div>
