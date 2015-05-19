@@ -18,14 +18,17 @@ if(count($query) > 0){
             <img src="<?php echo $row['image']; ?> ">
         </div>
 
+
         <div class="head">
             <h1><?php echo $row['title']; ?></h1>
+                <div class="date"> <?php echo $row['date']; ?> <br/> </div>
+                <div class="intro"> <?php echo $row['intro']; ?> </div>
         </div>
 
         <div class="content">
                 <?php echo $row['content']; ?><br/>
                 <?php echo $row['author']; ?><br/>
-                <?php echo $row['date']; ?> <br/>
+
 
         </div>
     </div>

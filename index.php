@@ -49,7 +49,7 @@ $db->opendb();
     <?php
         if(isset($_GET['readMore'])){
             $menu = array(
-                "?"  =>  "Terug",
+                "?terug#home"  =>  "Terug",
             );
             require_once($includeFolder."/Header.php");
             require_once($includeFolder."/Review.php");
