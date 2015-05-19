@@ -14,7 +14,7 @@
     <div class="content">
         <?php
             if(isset($_POST['login'])){
-                echo "Gebruikersnaam of wachtwoord fout.";
+                echo "Gebruikersnaam of wachtwoord fout.";//
             }
         ?>
         <form method="post" action="admin/#login" target="_top">
