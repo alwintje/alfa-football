@@ -13,9 +13,9 @@
     <div class="content">
         <div class="form">
             <form action="#">
-                <label>Naam</label><input type="text" class="form-control"/>
-                <label>Email</label><input type="text" class="form-control"/>
-                <label>bericht</label><input type="text" class="form-control"/>
+                <label for="name">Naam</label><input name="name" id="name" type="text" class="form-control"/>
+                <label for="email">Email</label><input name="email" id="email" type="text" class="form-control"/>
+                <label for="message">bericht</label><textarea name="message" id="message" class="form-control"></textarea>
                 <br />
                 <button class="btn btn-default">Verzend</button>
             </form>
