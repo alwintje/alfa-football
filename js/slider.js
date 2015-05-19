@@ -22,7 +22,9 @@ $(document).ready(function(){
                 $( this ).data( "color" ) + ";'>" +
                 $( this ).data( "title" ) +
                 "<div class='text' style='color: " +
-                $( this ).data( "color" ) + ";'>" + text + "</div>");
+                $( this ).data( "color" ) + ";'>" + text + "</div>"+
+                "<div class='read-more'><a href='?readMore="+
+                $( this ).data( "id" )+"'>Lees meer</a></div>");
 
         $( ".slider .slides ul" ).width( $(".slider").parent().width() * i );
         //console.log($(".slider").parent().width());
