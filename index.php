@@ -55,12 +55,15 @@ $db->opendb();
             require_once($includeFolder."/Review.php");
 
         }else{
+<<<<<<< Updated upstream
             $menu = array(
                 "#home"  =>  "Home",
                 "#played_games"  =>  "Gespeelde wedstrijden",
                 "#upcoming_games"  =>  "Aankomende wedstrijden",
                 "#contact"  =>  "Contact",
             );
+=======
+>>>>>>> Stashed changes
             require_once($includeFolder."/Start.php");
             require_once($includeFolder."/Header.php");
             require_once($includeFolder."/Content.php");
