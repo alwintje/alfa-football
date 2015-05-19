@@ -31,7 +31,7 @@ window.onload = function(){
         var scrollForElement = window.scrollY;
         for(var i=0;i < elements.length;i++){
 
-            if(scrollForElement < elements[i]['topHeight']-121 && scrollForElement > elements[i]['top']-121 ){
+            if(scrollForElement < elements[i]['topHeight']-131 && scrollForElement > elements[i]['top']-131 ){
 
                 if(history.pushState) {
                     history.pushState(null, null, "#"+elements[i]['id']);
