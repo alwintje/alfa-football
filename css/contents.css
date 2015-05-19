@@ -4,7 +4,11 @@
 /*}*/
 
 .container{
-    min-height: 500px;
+    min-height: 100%;
+    color: #000;
+    padding: 10px;
+    /*max-width: 1210px;*/
+    margin: auto;
 }
 .container .head{
 }
@@ -24,37 +28,9 @@
     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
 #played_games{
-    color: #000;
-    padding: 10px;
-    /*max-width: 1210px;*/
     background: #5BCFF3;
-    margin: auto;
+
 }
 #upcoming_games{
-    color: #000;
-    padding: 10px;
-    /*max-width: 1210px;*/
     background: #123046;
-    margin: auto;
 }
-/*#played_games .head{*/
-    /*border-bottom: 2px solid #fff;*/
-/*}*/
-/* upcomin games */
-
-/*#upcoming_games .head{*/
-    /*border-bottom: 2px solid #fff;*/
-/*}*/
-
-/*#upcoming_games{*/
-    /*background: #123046;*/
-    /*height: 600px ;*/
-/*}*/
-
-/*#upcoming_games .head h1{*/
-    /*list-style-type: none;*/
-    /*display: inline-block;*/
-    /*font-size: 25px;*/
-    /*font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;*/
-    /*padding-left: 25px;*/
-/*}*/
