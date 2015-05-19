@@ -17,6 +17,11 @@
     list-style-type: none;
     display: block;
     font-size: 25px;
+    font-weight: 600;
+}
+.container .head .intro{
+    font-weight: 600;
+    margin: 10px 0 10px 0;
 }
 .container .content{
     position: relative;

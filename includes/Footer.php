@@ -12,6 +12,12 @@
         <h1>Contact</h1>
     </div>
     <div class="content">
+        <p> Plaats:  Hardenberg </p>
+        <p> adress: straat 7, 7676AK  </p>
+        <p> Tell: 06 203 233 99  </p>
+        <p> Email: alfa@informatie.nl  </p><br>
+        <p>Of stuur ons een mail!</p>
+        <br>
         <div class="form">
             <form method="post" action="includes/PostContactForm.php">
                 <label for="name">Naam</label><input name="name" id="name" type="text" class="form-control" required/>
@@ -21,5 +27,9 @@
                 <button class="btn btn-default">Verzend</button>
             </form>
         </div>
+    </div>
+
+    <div class="footer">
+        <h1> Yaron en Alwin</h1>
     </div>
 </div>
