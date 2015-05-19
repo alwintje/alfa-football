@@ -40,7 +40,9 @@ $db->opendb();
 </head>
 <body>
     <?php
+        if($db->checksession()){
 
+        }
 
     ?>
 </body>
