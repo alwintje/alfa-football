@@ -5,11 +5,22 @@
  * Date: 19-5-2015
  * Time: 10:44
  */
-
+session_start();
 $includeFolder = "includes/";
 require_once("../".$includeFolder."Database.php");
 $db = new Database();
 $db->opendb();
+
+
+require_once($includeFolder."Security.php");
+$security = new Security();
+$security->Security();
+
+if(isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $security->checkLogin($username,$password);
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +52,7 @@ $db->opendb();
 </head>
 <body>
     <?php
-        if($db->checksession() == false){
+        if($security->checksession() == false){
             $menu = array(
                 "?"  =>  "Terug naar de website",
             );
