@@ -4,8 +4,8 @@
 /*}*/
 
 .container{
-    min-height: 100%;
-    color: #000;
+    min-height: 500px;
+    color: #ddd;
     padding: 10px;
     /*max-width: 1210px;*/
     margin: auto;
@@ -27,10 +27,32 @@
     margin: auto;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
 }
+/* background colors website */
 #played_games{
-    background: #5BCFF3;
+    background: #123046;
 
 }
 #upcoming_games{
+    background: #333;
+}
+#contact{
     background: #123046;
+    /*max-width: 1210px;*/
+}
+
+/* contact */
+.container .head{
+}
+.container .head h1{
+    list-style-type: none;
+    display: block;
+    font-size: 25px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    position: relative;
+    width: 1200px;
+    margin: auto;
+}
+.content .form{
+    max-width: 100%;
+    margin: auto;
 }
