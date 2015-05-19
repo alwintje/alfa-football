@@ -19,7 +19,7 @@
                 <?php
                     foreach($menu as $key => $val){
                         $scroll = substr($key, 0, 1) == "#" ? "data-scroll" : "";
-                        echo "<li><a href='".$key."' $scroll >".$val."</a> </li>";
+                        echo "<li><a href='".$key."' $scroll target='_top' >".$val."</a> </li>";
                     }
                 ?>
             </ul>

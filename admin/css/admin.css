@@ -1,9 +1,14 @@
-
+body{
+    background: #FFF;
+}
 #login{
     position: fixed;
     top: 50%;
     left: 50%;
-    margin: auto;
+    margin: -200px 0 0 -200px;
     width: 400px;
     height: 400px;
+    border: solid 1px #000;
+    padding: 0 50px 50px 50px;
+    background: rgba(0,0,0,0.5);
 }
