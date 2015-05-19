@@ -34,10 +34,11 @@ window.onload = function(){
             if(scrollForElement < elements[i]['topHeight']-131 && scrollForElement > elements[i]['top']-131 ){
 
                 if(history.pushState) {
-                    history.pushState(null, null, "#"+elements[i]['id']);
+                    history.pushState(null, null, location.protocol+'//'+location.host+location.pathname+"#"+elements[i]['id']);
+
                 }
                 else {
-                    location.hash = "#"+elements[i]['id'];
+                    location.hash = location.href.replace(location.hash,'')+"#"+elements[i]['id'];
                 }
                 var menuItem = document.querySelector("#header .navigation ul li a[href='#"+elements[i]['id']+"']");
                 //addClass(menuItems,"active");

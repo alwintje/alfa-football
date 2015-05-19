@@ -23,6 +23,7 @@ $db->opendb();
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
     <link href="css/contents.css" rel="stylesheet" />
+    <link href="css/admin.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
 
     <script src="js/menu.js"></script>
@@ -40,8 +41,8 @@ $db->opendb();
 </head>
 <body>
     <?php
-        if($db->checksession()){
-
+        if($db->checksession() == false){
+            require_once($includeFolder."Login.php");
         }
 
     ?>
