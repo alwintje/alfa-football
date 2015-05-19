@@ -28,6 +28,7 @@
         </div>
     </div>
 </div>
+
 <div id="played_games" class="scroll-url container">
     <div class="head">
         <h1>Gespeelde wedstrijden</h1>

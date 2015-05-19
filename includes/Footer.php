@@ -14,9 +14,9 @@
     <div class="content">
         <div class="form">
             <form method="post" action="includes/PostContactForm.php">
-                <label for="name">Naam</label><input name="name" id="name" type="text" class="form-control"/>
-                <label for="email">Email</label><input name="email" id="email" type="text" class="form-control"/>
-                <label for="message">bericht</label><textarea name="message" id="message" class="form-control"></textarea>
+                <label for="name">Naam</label><input name="name" id="name" type="text" class="form-control" required/>
+                <label for="email">Email</label><input name="email" id="email" type="text" class="form-control" required/>
+                <label for="message">bericht</label><textarea name="message" id="message" class="form-control" required></textarea>
                 <br />
                 <button class="btn btn-default">Verzend</button>
             </form>
