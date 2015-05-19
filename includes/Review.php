@@ -13,15 +13,20 @@ if(count($query) > 0){
     $row = mysqli_fetch_array($query);
 ?>
 
-    <div class="scroll-url container">
+    <div class="container">
+        <div class="header_image">
+            <img src="<?php echo $row['image']; ?> ">
+        </div>
+
         <div class="head">
             <h1><?php echo $row['title']; ?></h1>
         </div>
+
         <div class="content">
                 <?php echo $row['content']; ?><br/>
                 <?php echo $row['author']; ?><br/>
                 <?php echo $row['date']; ?> <br/>
-                <img src="<?php echo $row['image']; ?> ">
+
         </div>
     </div>
 <?php
