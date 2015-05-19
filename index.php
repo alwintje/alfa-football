@@ -49,7 +49,8 @@ $db->opendb();
     <?php
         if(isset($_GET['readMore'])){
             require_once($includeFolder."/Header.php");
-            echo $_GET['readMore'];
+            require_once($includeFolder."/Review.php");
+
         }else{
 
             require_once($includeFolder."/Start.php");

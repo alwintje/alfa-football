@@ -23,7 +23,7 @@ $db->opendb();
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
     <link href="css/contents.css" rel="stylesheet" />
-    <link href="css/admin.css" rel="stylesheet" />
+    <link href="admin/css/admin.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
 
     <script src="js/menu.js"></script>
