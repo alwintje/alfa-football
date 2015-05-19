@@ -14,6 +14,7 @@
     margin: auto;
 }
 .container .head h1{
+    padding: 10px 0 0 0;
     list-style-type: none;
     display: block;
     font-size: 25px;
@@ -34,4 +35,21 @@
 }
 .container:nth-of-type(1), .container:nth-of-type(3), .container:nth-of-type(5), .container:nth-of-type(7){
     background: #123046;
+}
+.container .content .table{
+    width: 100%;
+    border-spacing: 0;
+}
+.container .content .table th{
+    text-align: left;
+    padding: 5px 10px 5px 10px;
+}
+.container .content .table td{
+    padding: 5px 10px 5px 10px;
+}
+.container .content .table tr:hover td{
+    background: rgba(0,0,0,0.2);
+}
+.container .content .table th:last-child{
+    width: 100%;
 }

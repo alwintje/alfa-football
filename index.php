@@ -59,6 +59,7 @@ $db->opendb();
                 "#home"  =>  "Home",
                 "#played_games"  =>  "Gespeelde wedstrijden",
                 "#upcoming_games"  =>  "Aankomende wedstrijden",
+                "#oranje"  =>  "Oranje",
                 "#contact"  =>  "Contact",
             );
             require_once($includeFolder."/Start.php");

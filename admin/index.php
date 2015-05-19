@@ -21,6 +21,9 @@ if(isset($_POST['login'])){
     $password = $_POST['password'];
     $security->checkLogin($username,$password);
 }
+if(isset($_GET['logout'])){
+    $security->logout();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,9 +39,11 @@ if(isset($_POST['login'])){
     <link href="css/contents.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="css/component.css" />
     <link href="admin/css/admin.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
 
     <script src="js/menu.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/jquery.datetimepicker.js"></script>
 
     <script src="js/smooth-scroll.js" ></script>
     <script>
@@ -56,8 +61,19 @@ if(isset($_POST['login'])){
             $menu = array(
                 "?"  =>  "Terug naar de website",
             );
-            require_once("../".$includeFolder."/Header.php");
+            require_once("../".$includeFolder."Header.php");
             require_once($includeFolder."Login.php");
+        }else{
+            $menu = array(
+                "#tokens"  =>  "Tokens",
+                "admin/?logout"  =>  "loguit",
+            );
+            require_once("../".$includeFolder."Header.php");
+            require_once($includeFolder."Users.php");
+            require_once("../".$includeFolder."RssReader.php");
+            $rss = new RssReader();
+            $rss->setUrl("http://www.meemetoranje.nl/feed/");
+            $rss->generateCode();
         }
 
     ?>

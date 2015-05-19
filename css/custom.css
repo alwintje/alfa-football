@@ -42,7 +42,7 @@
 .slider .slides ul li{
     /*cursor: pointer;*/
 }
-.slider .slides ul li .title {
+.slider .slides ul li .all {
     position: absolute;
     left: 50%;
     width: 1000px;
@@ -59,7 +59,7 @@
     width: 1000px;
     margin-left: -500px;
     font-family: arial, serif;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 400;
     top: 50px;
 }
@@ -100,3 +100,11 @@
 
 }
 
+.rss-feed .slides ul li .all{
+    margin-top: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+}
+.rss-feed .slides ul li .text{
+    padding: 20px;
+}

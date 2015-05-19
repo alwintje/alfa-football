@@ -26,7 +26,15 @@
     </div>
 </div>
 
+<?php
 
+    if(isset($_GET['token'])){
+        $q = $db->doquery("SELECT date, used FROM {{table}} WHERE token='".$_GET['token']."'","tokens");
+        if(mysqli_num_rows($q) == 1){
+            $r = mysqli_fetch_array($q);
+            $date = new DateTime();
+            if($r['date'] > $date->getTimestamp() && $r['used'] == false){
+?>
 <div id="register" class="scroll-url container">
     <div class="head">
         <h1>Register</h1>
@@ -46,9 +54,12 @@
                 foreach($reg as $val){
                     echo $val.'<br />';
                 }
+                $q = $db->doquery("UPDATE {{table}} SET used=true WHERE token='".$_GET['token']."'","tokens");
+
+
             }
         ?>
-        <form method="post" action="admin/#register" target="_top">
+        <form method="post" action="admin/?token=<?php echo $_GET['token'];  ?>#register" target="_top">
             <label for="username">Gebruikernaam</label><input name="username" id="username" type="text" class="form-control"/>
             <label for="password">Wachtwoord</label><input name="password" id="password" type="password" class="form-control"/>
             <label for="secondPassword">Herhaal wachtwoord</label><input name="secondPassword" id="secondPassword" type="password" class="form-control"/>
@@ -60,3 +71,10 @@
         </form>
     </div>
 </div>
+<?php
+
+            }
+        }
+    }
+
+?>

@@ -9,7 +9,7 @@
 
 ?>
 
-<div id="home" class="slider scroll-url">
+<div id="home" class="reviews slider scroll-url">
     <div class="background">
         <div class="slides">
             <ul>
@@ -81,6 +81,29 @@
     </div>
 </div>
 
+<div id="oranje" class="rss-feed slider scroll-url">
+    <div class="background">
+        <div class="slides">
+            <ul>
+                <?php
+
+                $reviews = new Reviews();
+
+                require_once($includeFolder."/RssReader.php");
+                $rss = new RssReader();
+                $rss->setUrl("http://www.meemetoranje.nl/feed/");
+
+
+                foreach($rss->generateCode() as $val){
+
+                    $reviews->addReview(false,$val['title'], $val['description'],false,false,$val['link']);
+                }
+                echo $reviews->generateHtml();
+                ?>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
 <?php
@@ -91,7 +114,8 @@ class Reviews{
     private $reviews = array();
 
 
-    public function addReview($id,$title,$content,$color=false, $image=false){
+    public function addReview($i,$title,$content,$color=false, $image=false, $link=false){
+        $id = $i == false ? count($this->reviews) : $i;
         $this->reviews[$id] = array();
         $this->reviews[$id]['id'] = $id;
         $this->reviews[$id]['title'] = $title;
@@ -101,6 +125,18 @@ class Reviews{
         $this->reviews[$id]['color'] = $color;
 
         $this->reviews[$id]['image'] = $image;
+        if($link == false){
+
+        }else{
+
+        }
+        if($i != false && $link == false){
+            $this->reviews[$id]['readmore'] = "?readMore=".$i;
+        }elseif($link != false){
+            $this->reviews[$id]['readmore'] = $link;
+        }else{
+            $this->reviews[$id]['readmore'] = false;
+        }
     }
 
     public function generateHtml(){
@@ -110,6 +146,7 @@ class Reviews{
             $html .= "data-title='".$val['title']."'";
             $html .= "data-color='".$val['color']."'";
             $html .= "data-id='".$val['id']."'";
+            $html .= "data-readmore='".$val['readmore']."'";
             if($val['image'] != false && $val['image'] != ""){
                 $html .= "data-image='".$val['image']."'";
             }

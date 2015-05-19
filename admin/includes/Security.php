@@ -64,4 +64,8 @@ class Security{
     }
 
 
+    public function logout(){
+        unset($_SESSION['football']);
+        header("location: ?");
+    }
 }
