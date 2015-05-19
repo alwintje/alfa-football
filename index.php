@@ -19,6 +19,7 @@ $db->opendb();
     <meta name="viewport" content="initial-scale=1; maximum-scale=1; user-scalable=false;width=device-width, height=device-height" >
 
     <title>Alfa-football</title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/index.css" rel="stylesheet" />
     <link href="css/header.css" rel="stylesheet" />
     <link href="css/contents.css" rel="stylesheet" />
