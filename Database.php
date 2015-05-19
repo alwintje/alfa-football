@@ -14,8 +14,8 @@ class Database{
         "server"        => "localhost",	// MySQL server naam.
         "user"          => "root",		// MySQL gebruikersnaam.
         "pass"          => "",			// MySQL wachtwoord.
-        "name"          => "proict",	// MySQL database naam.
-        "prefix"        => "chat");		// Eerste deel van tabellen.
+        "name"          => "school",	// MySQL database naam.
+        "prefix"        => "football");	// Eerste deel van tabellen.
 
     private $mysqli;
     public function opendb() { // Maakt connectie met de database.
