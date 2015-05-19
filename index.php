@@ -1,5 +1,4 @@
 <?php
-    $includeFolder = "includes";
 
    /////////////////////////////////
   //      BASIS KLEUREN          //
@@ -7,6 +6,11 @@
 //    Donker blauw: #123046    //
 ////////////////////////////////
 
+
+$includeFolder = "includes";
+require_once($includeFolder."/Database.php");
+$db = new Database();
+$db->opendb();
 ?>
 <!DOCTYPE html>
 <html>
@@ -44,6 +48,7 @@
 </head>
 <body>
     <?php
+
         require_once($includeFolder."/Start.php");
         require_once($includeFolder."/Header.php");
         require_once($includeFolder."/Content.php");
