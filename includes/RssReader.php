@@ -33,7 +33,7 @@ class RssReader{
             $posts[] = array(
                 "title" => $item_title,
                 "link" => $item_link,
-                "description" => $item_desc."<div class='read-more'></div>",
+                "description" => $item_desc,
             );
         }
         return $posts;

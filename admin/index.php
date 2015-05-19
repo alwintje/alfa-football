@@ -70,10 +70,6 @@ if(isset($_GET['logout'])){
             );
             require_once("../".$includeFolder."Header.php");
             require_once($includeFolder."Users.php");
-            require_once("../".$includeFolder."RssReader.php");
-            $rss = new RssReader();
-            $rss->setUrl("http://www.meemetoranje.nl/feed/");
-            $rss->generateCode();
         }
 
     ?>
