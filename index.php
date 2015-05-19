@@ -48,11 +48,19 @@ $db->opendb();
 <body>
     <?php
         if(isset($_GET['readMore'])){
+            $menu = array(
+                "?"  =>  "Terug",
+            );
             require_once($includeFolder."/Header.php");
             require_once($includeFolder."/Review.php");
 
         }else{
-
+            $menu = array(
+                "#home"  =>  "Home",
+                "#played_games"  =>  "Gespeelde wedstrijden",
+                "#upcoming_games"  =>  "Aankomende wedstrijden",
+                "#contact"  =>  "Contact",
+            );
             require_once($includeFolder."/Start.php");
             require_once($includeFolder."/Header.php");
             require_once($includeFolder."/Content.php");
