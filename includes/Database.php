@@ -36,4 +36,43 @@ class Database{
         return $sqlquery;
 
     }
+
+    public function checksession(){
+
+        $row = false;
+
+        if (isset($_SESSION['football'])) {
+            $theuser = explode("//", $_SESSION['football']);
+            $query = $this->doquery("SELECT * FROM {{table}} WHERE username='$theuser[0]' AND password='$theuser[1]'", "users");
+
+            if (mysqli_num_rows($query) != 1) {
+                die("Er is iets mis met de sessions (Error 1).");
+                unset($_SESSION['football']);
+            }
+            $row = mysqli_fetch_array($query);
+        }
+
+        return $row;
+    }
+    public function checkRegister($username,$name,$pass,$secondPass, $email){
+        $query = $this->doquery("SELECT username FROM {{table}} WHERE username='$username'","users");
+
+        if(!(mysqli_num_rows($query) > 0) && $pass == $secondPass && $username != "" && $pass != "" && $name != "" && $email != ""){
+            $_SESSION['football'] = $username."//".md5($pass);
+            $this->doquery("INSERT INTO {{table}} SET username='$username', displayname='$name', password='".md5($pass)."'","users");
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function checkLogin($username,$password){
+        $query = $this->doquery("SELECT * FROM {{table}} WHERE username='$username' AND password='".md5($password)."'","users");
+        if(mysqli_num_rows($query) > 0){
+            $_SESSION['football'] = $username."//".md5($password);
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
