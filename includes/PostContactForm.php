@@ -6,30 +6,35 @@
  * Time: 09:59
  */
 
-$host = "localhost";
-$user = "root";
-$pass = "";
+//$host = "localhost";
+//$user = "root";
+//$pass = "";
+//
+//mysql_connect($host, $user, $pass);
+//
+//$dbName = "school";
+//
+//$con = mysql_connect("localhost", "root", "");
+//mysql_select_db($dbName);
+//
+//if(mysql_error()){
+//    echo "connection to the database failed!";
+//}
+//
+//if(mysql_query("INSERT INTO football_contact(name, email, message)VALUES(
+//        '".mysql_real_escape_string($_POST['name'])."',
+//        '".mysql_real_escape_string($_POST['email'])."',
+//        '".mysql_real_escape_string($_POST['message'])."'
+//    )"))
+//{
 
-mysql_connect($host, $user, $pass);
+require_once("Database.php");
+$db = new Database();
+$db->opendb();
 
-$dbName = "school";
+$name = "name='".mysql_real_escape_string($_POST['name'])."'";
+$message = "message='".mysql_real_escape_string($_POST['message'])."'";
+$email = "email='".mysql_real_escape_string($_POST['email'])."'";
 
-$con = mysql_connect("localhost", "root", "");
-mysql_select_db($dbName);
+$db->doquery("INSERT INTO {{table}} SET $name, $message, $email ","contact");
 
-if(mysql_error()){
-    echo "connection to the database failed!";
-}
-
-if(mysql_query("INSERT INTO football_contact(name, email, message)VALUES(
-        '".mysql_real_escape_string($_POST['name'])."',
-        '".mysql_real_escape_string($_POST['email'])."',
-        '".mysql_real_escape_string($_POST['message'])."'
-    )"))
-{
-    echo "verzonden";
-}else{
-    echo "Er is helaas een fout op getreden";
-}
-
-mysql_close($con);
