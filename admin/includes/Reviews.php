@@ -28,10 +28,17 @@
                         $author = "author='".mysql_real_escape_string($_POST['author'])."'";
                         $date = "rev_date='".mysql_real_escape_string($_POST['rev_date'])."'";
                         $image = "image='".mysql_real_escape_string($_POST['image'])."'";
+                        $errors = [];
+                        if(count($title) < 4){$errors[] = "Titel is niet lang genoeg.";}
+                        if(count($title) < 4){$errors[] = "Titel is niet lang genoeg.";}
+                        if(count($title) < 4){$errors[] = "Titel is niet lang genoeg.";}
 
-                        if(count($title) > 3 ){
-                            if(count($intro) > 3){
-                                $db->doquery("INSERT INTO {{table}} SET $title, $intro, $content ,$date,$author,$image","reviews");
+                        if(count($errors) == 0){
+                            $db->doquery("INSERT INTO {{table}} SET $title, $intro, $content ,$date,$author,$image","reviews");
+                        }else{
+
+                            foreach($errors as $val){
+                                echo $val."<br />";
                             }
                         }
                     }
