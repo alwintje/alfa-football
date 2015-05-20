@@ -23,7 +23,7 @@ class RssReader{
         $xmlDoc->load($this->url);
         $x=$xmlDoc->getElementsByTagName('item');
         $posts = array();
-        for ($i=0; $i<=2; $i++) {
+        for ($i=0; $i<=3; $i++) {
             $item_title=$x->item($i)->getElementsByTagName('title')
                 ->item(0)->childNodes->item(0)->nodeValue;
             $item_link=$x->item($i)->getElementsByTagName('link')

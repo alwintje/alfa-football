@@ -98,6 +98,7 @@ $(document).ready(function(){
             }
         }
     }
+
     function seeSlide(a,i){
         console.log(a,i);
         $( "."+sliders[i]+" .slides ul" ).css({
