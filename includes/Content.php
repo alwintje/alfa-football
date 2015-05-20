@@ -47,12 +47,11 @@
                         <th>Id</th> <th>Thuis</th> <th>Uit</th> <th>Thuis score</th> <th> Uit score</th> <th>Datum</th>
                      <tr>
                      <tr>
-                        <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['team_home']; ?></td>
-                        <td><?php echo $row['team_away']; ?></td>
-                        <td> <?php echo $row['score_home'];?></td>
-                        <td><?php echo $row['score_away'];?></td>
-                        <td><?php echo $row['date'];; ?></td>
+                        <td> <?php echo $row['id']; ?></td>
+                        <td> <?php echo $row['team_home']; ?></td>
+                        <td> <?php echo $row['team_away']; ?></td>
+                        <td> <?php echo $row['date'];?></td>
+                        <td> <?php echo $row['end_date'];?></td>
                          <?php
                               }
                          }
@@ -74,10 +73,11 @@
                             <th>Id</th> <th>Thuis</th> <th>Uit</th>  <th> Datum </th>
                         <tr>
                         <tr>
-                            <td><?php echo $row['id']; ?></td>
-                            <td><?php echo $row['team_home']; ?></td>
-                            <td><?php echo $row['team_away']; ?></td>
-                            <td><?php echo $row['date']; ?></td>
+                            <td> <?php echo $row['id']; ?></td>
+                            <td> <?php echo $row['team_home']; ?></td>
+                            <td> <?php echo $row['team_away']; ?></td>
+                            <td> <?php echo $row['date'];?></td>
+                            <td> <?php echo $row['end_date'];?></td>
                             <?php
                                 }
                             }

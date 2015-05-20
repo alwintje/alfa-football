@@ -66,10 +66,13 @@ if(isset($_GET['logout'])){
         }else{
             $menu = array(
                 "#tokens"  =>  "Tokens",
+                "#reviews"  =>  "Tokens",
                 "admin/?logout"  =>  "loguit",
             );
             require_once("../".$includeFolder."Header.php");
+            require_once($includeFolder."Reviews.php");
             require_once($includeFolder."Users.php");
+
         }
 
     ?>
