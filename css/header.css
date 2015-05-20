@@ -60,4 +60,17 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+#header .inner .navigation #searchContent{
+    display: none;
+    position: absolute;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+}
+#header .inner .navigation #searchContent a{
+    color: #00728c;
+}
+#header .inner .navigation #searchContent a:hover{
+    color: #007fff;
+}
 
