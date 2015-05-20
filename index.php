@@ -57,8 +57,7 @@ $db->opendb();
         }else{
             $menu = array(
                 "#home"  =>  "Home",
-                "#played_games"  =>  "Gespeelde wedstrijden",
-                "#upcoming_games"  =>  "Aankomende wedstrijden",
+                "#games"  =>  "Wedstrijden",
                 "#oranje"  =>  "Oranje",
                 "#contact"  =>  "Contact",
             );

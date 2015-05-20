@@ -1,12 +1,20 @@
 
-var now = [1,1];
-var j = [1,1];
-var wait = [0,0];
+var now = [];
+var j = [];
+var wait = [];
+var firstTime = [];
 var sliders = ["reviews","rss-feed"];
 
 var img;
 $(document).ready(function(){
-    
+
+    for(var i=0; i<sliders.length; i++){
+
+        now[i] = 1;
+        j[i] = 1;
+        wait[i] = 0;
+        firstTime[i] = 0;
+    }
     for(var i=0; i<sliders.length; i++){
 
         $( "."+sliders[i]+" .slides ul" ).addClass( transition );
@@ -69,8 +77,7 @@ $(document).ready(function(){
 
     }
 });
-    
-    var firstTime = [0,0];
+
     function slide(a,i){
         console.log(a,i);
         var check = now[i]+a;
