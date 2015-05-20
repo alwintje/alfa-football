@@ -28,8 +28,6 @@ if(count($query) > 0){
         <div class="content">
                 <?php echo $row['content']; ?><br/>
                 <?php echo $row['author']; ?><br/>
-
-
         </div>
     </div>
 <?php

@@ -36,47 +36,54 @@
         <h1>Gespeelde wedstrijden</h1>
     </div>
     <div class="content">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in interdum lectus. Nunc rutrum felis sit amet velit lobortis pharetra.
-            Duis sit amet tristique sapien, a bibendum odio. Curabitur dictum eget quam vel imperdiet. Nulla at mauris sit amet erat varius convallis.
-            Sed sit amet libero tellus. Fusce tincidunt risus sit amet semper iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-            posuere cubilia Curae; Nunc interdum dui sit amet tortor aliquam mollis. Praesent quam nulla, iaculis id massa sit amet, venenatis commodo mi.
-            orem in diam finibus, porttitor imperdiet ex pulvinar.
+        <?php
 
-            Donec iaculis augue ac mi malesuada, sit amet venenatis
-            ex pellentesque. Aenean placerat diam neque, ut dapibus nisi facilisis a.
-            Suspendisse magna nunc, vulputate eu lorem nec, mattis malesuada ligula.
-            Vivamus vulputate vitae sem et posuere. Praesent laoreet sapien ut lacus
-            ultricies accumsan. In in justo tempor, posuere turpis eu, semper neque. Nunc quis nibh eu odio lacinia volutpat in nec dolor.
+            $query = $db->doquery("SELECT * FROM {{table}}","games");
 
-            Quisque ac est molestie, consequat turpis sit amet, elementum mi. Curabitur bibendum condimentum quam eu congue.
-            Sed nec ipsum felis. Pellentesque sit amet mollis magna, nec venenatis arcu. Nullam at condimentum elit. Nullam sed consequat odio.
-            Vestibulum sagittis lacinia imperdiet. Nam faucibus quam nec mauris ultrices, a fringilla tortor pellentesque. Aliquam sapien odio,
-            congue eu risus vitae, dapibus sodales nulla. Proin nec blandit justo. Pellentesque laoreet mauris vel augue tincidunt iaculis.
-            Sed ac commodo lacus.
-        </p>
+            if(count($query) > 0){
+                while($row = mysqli_fetch_array($query)){?>
+                 <table>
+                     <tr>
+                        <th>Id</th> <th>Thuis</th> <th>Uit</th> <th>Thuis score</th> <th> Uit score</th> <th>Datum</th>
+                     <tr>
+                     <tr>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['team_home']; ?></td>
+                        <td><?php echo $row['team_away']; ?></td>
+                        <td> <?php echo $row['score_home'];?></td>
+                        <td><?php echo $row['score_away'];?></td>
+                        <td><?php echo $row['date'];; ?></td>
+                         <?php
+                              }
+                         }
+                         ?>
+                     </tr>
+                 </table>
     </div>
     <div class="head">
         <h1>Aankomende wedstrijden</h1>
     </div>
     <div class="content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in interdum lectus. Nunc rutrum felis sit amet velit lobortis pharetra.
-        Duis sit amet tristique sapien, a bibendum odio. Curabitur dictum eget quam vel imperdiet. Nulla at mauris sit amet erat varius convallis.
-        Sed sit amet libero tellus. Fusce tincidunt risus sit amet semper iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-        posuere cubilia Curae; Nunc interdum dui sit amet tortor aliquam mollis. Praesent quam nulla, iaculis id massa sit amet, venenatis commodo mi.
-        orem in diam finibus, porttitor imperdiet ex pulvinar.
+        <?php
+            $query = $db->doquery("SELECT * FROM {{table}}","games");
 
-        Donec iaculis augue ac mi malesuada, sit amet venenatis
-        ex pellentesque. Aenean placerat diam neque, ut dapibus nisi facilisis a.
-        Suspendisse magna nunc, vulputate eu lorem nec, mattis malesuada ligula.
-        Vivamus vulputate vitae sem et posuere. Praesent laoreet sapien ut lacus
-        ultricies accumsan. In in justo tempor, posuere turpis eu, semper neque. Nunc quis nibh eu odio lacinia volutpat in nec dolor.
-
-        Quisque ac est molestie, consequat turpis sit amet, elementum mi. Curabitur bibendum condimentum quam eu congue.
-        Sed nec ipsum felis. Pellentesque sit amet mollis magna, nec venenatis arcu. Nullam at condimentum elit. Nullam sed consequat odio.
-        Vestibulum sagittis lacinia imperdiet. Nam faucibus quam nec mauris ultrices, a fringilla tortor pellentesque. Aliquam sapien odio,
-        congue eu risus vitae, dapibus sodales nulla. Proin nec blandit justo. Pellentesque laoreet mauris vel augue tincidunt iaculis.
-        Sed ac commodo lacus.
+            if(count($query) > 0){
+                while ($row = mysqli_fetch_array($query)){?>
+                    <table>
+                        <tr>
+                            <th>Id</th> <th>Thuis</th> <th>Uit</th>  <th> Datum </th>
+                        <tr>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['team_home']; ?></td>
+                            <td><?php echo $row['team_away']; ?></td>
+                            <td><?php echo $row['date']; ?></td>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </tr>
+                    </table>
     </div>
 </div>
 
@@ -156,7 +163,7 @@ class Reviews{
 
 }
 
-?>
+
 
 
 
