@@ -28,7 +28,8 @@
         </div>
     </div>
 </div>
-
+<div id="searchContent" class="container">
+</div>
 
 <div id="games" class="scroll-url container">
     <div class="head">

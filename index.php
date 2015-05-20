@@ -44,6 +44,7 @@ $db->opendb();
         var transition = 'easeInCirc';
     </script>
     <script src="js/slider.js" ></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
     <?php

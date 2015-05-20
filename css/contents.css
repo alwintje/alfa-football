@@ -53,3 +53,6 @@
 .container .content .table th:last-child{
     width: 100%;
 }
+#searchContent{
+    display: none;
+}
