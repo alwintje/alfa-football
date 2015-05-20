@@ -16,7 +16,7 @@
                 <?php
                     $reviews = new Reviews();
 
-                    $query = $db->doquery("SELECT * FROM {{table}} LIMIT 10","reviews");
+                    $query = $db->doquery("SELECT * FROM {{table}} ORDER BY date DESC LIMIT 10","reviews");
 
                     while($row = mysqli_fetch_array($query)){
 
@@ -27,8 +27,6 @@
             </ul>
         </div>
     </div>
-</div>
-<div id="searchContent" class="container">
 </div>
 
 <div id="games" class="scroll-url container">

@@ -65,13 +65,13 @@ if(isset($_GET['logout'])){
             require_once($includeFolder."Login.php");
         }else{
             $menu = array(
+                "#reviews"  =>  "Reviews",
                 "#tokens"  =>  "Tokens",
-                "#reviews"  =>  "Tokens",
                 "admin/?logout"  =>  "loguit",
             );
             require_once("../".$includeFolder."Header.php");
             require_once($includeFolder."Reviews.php");
-            require_once($includeFolder."Users.php");
+            require_once($includeFolder . "Tokens.php");
 
         }
 
