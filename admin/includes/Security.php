@@ -46,7 +46,7 @@ class Security{
 
 
         if(count($errors) == 0){
-            $this->db->doquery("INSERT INTO {{table}} SET username='$username', displayname='$name', password='".md5($pass)."'","users");
+            $this->db->doquery("INSERT INTO {{table}} SET username='$username', name='$name', password='".md5($pass)."', email='".$email."'","users");
             return array("Gebruiker aangemaakt");
         }else{
             return $errors;

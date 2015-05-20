@@ -60,6 +60,7 @@ $db->opendb();
                 "#games"  =>  "Wedstrijden",
                 "#oranje"  =>  "Oranje",
                 "#contact"  =>  "Contact",
+                "search" => true,
             );
             require_once($includeFolder."/Start.php");
             require_once($includeFolder."/Header.php");
