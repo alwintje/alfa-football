@@ -28,8 +28,10 @@
                     }
                     if($search){
                         echo "<li>";
-                        echo "<input type='text' id='search' placeholder='Zoeken..'/>";
+                        echo "<input type='text' id='search' placeholder='Zoeken..' autocomplete='off'/>";
                         echo "</li>";
+                        echo "<div id='searchContent'>";
+                        echo "</div>";
                     }
                 ?>
             </ul>

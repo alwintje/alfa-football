@@ -25,8 +25,9 @@ $(document).ready(function (){
                 if(data.length == 0){
                     searchContent.style.display = "none";
                 }
+                createDivs(searchContent, searchString);
                 for(var i =0;i < data.length;i++){
-                    createDivs(searchContent, searchString, data[i].content);
+                    createDivs(searchContent, "<a href='?readMore="+data[i].id+"'>"+data[i].title+"</a> <br />");
                 }
 
                 //console.log(data);
@@ -35,20 +36,9 @@ $(document).ready(function (){
     }
 });
 
-function createDivs(parent, title,content){
-    var h1 = document.createElement("h1");
-    h1.innerHTML = title;
-
-    var head = document.createElement("div");
-    head.className = "head";
-    head.appendChild(h1);
-
+function createDivs(parent, title){
     var el = document.createElement("div");
-    el.className = "content";
-    el.innerHTML = content;
-
-
-    parent.appendChild(head);
+    el.innerHTML = title;
     parent.appendChild(el);
 
 
