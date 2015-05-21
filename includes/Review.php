@@ -21,13 +21,27 @@ if(count($query) > 0){
 
         <div class="head">
             <h1><?php echo $row['title']; ?></h1>
-                <div class="date"> <?php echo $row['rev_date']; ?> <br/> </div>
+                <?php
+                    $phpDate = strtotime( $row['rev_date'] );
+                    $mysqlDate = date( 'd-m-Y H:i', $phpDate );
+                ?>
+                <div class="date"> <?php echo $mysqlDate; ?> <br/> </div>
                 <div class="intro"> <?php echo $row['intro']; ?> </div>
         </div>
 
         <div class="content">
-                <?php echo $row['content']; ?><br/>
-                <?php echo $row['author']; ?><br/>
+                <?php echo $row['content']; ?>
+                <br/>
+                <br/>
+                <span class="italic">Auteur:
+                    <?php
+
+                    $sql = $db->doquery("SELECT * FROM {{table}} WHERE id='".$row['author']."'", "users");
+                    $r = mysqli_fetch_array($sql);
+                    echo $r['name'] ;
+
+                    ?><br/>
+                </span>
         </div>
     </div>
 <?php
