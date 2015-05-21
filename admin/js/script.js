@@ -5,16 +5,23 @@
 $(document).ready(function(){
 
 
-    content.innerHTML = "moii";
 
     reviews();
 });
 
 var rev_start = 0;
 var rev_end = 10;
+var rev_max = 0;
 function reviews(){
 
     var content = document.querySelector("#reviewContents");
+    content.innerHTML = "";
+
+    $.ajax({
+        url: "admin/includes/Ajax.php?reviewsMax"
+    }).done(function(data){
+        rev_max = data;
+    });
 
     $.ajax({
         type: "POST",
@@ -22,15 +29,10 @@ function reviews(){
         data: {start: rev_start,end: rev_end},
         dataType: 'json'
     }).done(function(data){
-        //
-        //searchContent.style.display = "block";
-        //searchContent.innerHTML = "";
-        //if(data.length == 0){
-        //    searchContent.style.display = "none";
-        //}
-        //createDivs(searchContent, searchString);
         var table = document.createElement("table");
+        table.setAttribute("class", "table");
         table.style.width = "100%";
+
         for(var i =0;i < data.length;i++){
             //createDivs(searchContent, "<a href='?readMore="+data[i].id+"'>"+data[i].title+"</a> <br />");
             console.log(data[i].title);
@@ -47,7 +49,11 @@ function reviews(){
 
         //console.log(data);
     });
-
+    if(rev_max > rev_end){
+        var bttnNext = document.createElement("input");
+        bttnNext.type = "button";
+        content.appendChild(bttnNext);
+    }
 
 
 }

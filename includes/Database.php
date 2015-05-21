@@ -54,4 +54,7 @@ class Database{
 
         return $row;
     }
+    public function esc_str($string){
+        return $this->mysqli->real_escape_string($string);
+    }
 }
