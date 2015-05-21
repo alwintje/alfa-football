@@ -53,6 +53,9 @@ function reviews(){
         var bttnNext = document.createElement("input");
         bttnNext.type = "button";
         content.appendChild(bttnNext);
+        bttnNext.onclick = function(){
+            console.log("moioi");
+        }
     }
 
 
