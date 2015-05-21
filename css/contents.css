@@ -43,6 +43,15 @@
 {
     background: #123046;
 }
+.container:nth-child(0),
+.container:nth-child(2),
+.container:nth-child(4),
+.container:nth-child(6),
+.container:nth-child(8),
+.container:nth-child(10)
+{
+    background: #333;
+}
 .container .content .table{
     width: 100%;
     border-spacing: 0;

@@ -25,6 +25,7 @@
                         "sendUrl"   =>  "admin/#reviews",
                         "sendName"  =>  "addReview",
                         "sendBttn"  =>  "Verstuur",
+                        "del"  =>  false,
                     ];
                 ?>
                 <?php
@@ -44,7 +45,13 @@
                             "sendUrl"   =>  "admin/?editRev=".$_GET['editRev']."#reviews",
                             "sendName"  =>  "editReview",
                             "sendBttn"  =>  "Wijzig",
+                            "del"  =>  true,
                         ];
+                        if(isset($_POST['deleteReview'])){
+
+                            $db->doquery("UPDATE {{table}} SET deleted='true' WHERE id='".$_GET['editRev']."'","reviews");
+                            header("location: #reviews");
+                        }
 
                     }
                 ?>
@@ -122,7 +129,21 @@
                 <label for="rev_date">Datum</label><br/><input name="rev_date" value="<?php echo $values['date'];?>" id="rev_date" class="form-control" required="required"><br/>
                 <label for="image">Afbeelding</label><input name="image" value="<?php echo $values['image'];?>" id="image" class="form-control" >
                 <br />
-                <input type="submit" class="btn btn-default" name="<?php echo $sendValues['sendName']; ?>" value="<?php echo $sendValues['sendBttn']; ?>"/>
+                <input type="submit" class="btn btn-default" name="<?php
+                    echo $sendValues['sendName'];
+                ?>" value="<?php
+                    echo $sendValues['sendBttn'];
+                ?>"/>
+                <?php
+                    if($sendValues['del']){
+                ?>
+                    <input type="submit" class="btn btn-default" name="deleteReview" value="Verwijder" />
+                <?php
+                    }
+
+                ?>
+
+
             </form>
         </div>
     </div>
