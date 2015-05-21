@@ -58,16 +58,24 @@ function reviews(){
             var table = document.createElement("table");
             table.setAttribute("class", "table");
             table.style.width = "100%";
-
             for(var i =0;i < data.length;i++){
-                //createDivs(searchContent, "<a href='?readMore="+data[i].id+"'>"+data[i].title+"</a> <br />");
+
                 var tr = document.createElement("tr");
+
                 var td = document.createElement("td");
                 td.innerHTML = data[i].title;
                 tr.appendChild(td);
+
                 td = document.createElement("td");
                 td.innerHTML = data[i].rev_date;
                 tr.appendChild(td);
+
+                tr.dataset.id = data[i].id;
+                tr.style.cursor = "pointer";
+                tr.onclick = function(e){
+                    var id = e.target.parentNode.dataset.id;
+                    window.location.href = "admin/?editRev="+id+"#reviews";
+                };
                 table.appendChild(tr);
             }
             content.appendChild(table);
