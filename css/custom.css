@@ -52,6 +52,9 @@
     font-weight: 400;
     top: 10px;
     height: 490px;
+    margin-top: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
 }
 .slider .slides ul li .text {
     position: absolute;
@@ -62,6 +65,7 @@
     font-size: 25px;
     font-weight: 400;
     top: 50px;
+    padding: 20px;
 }
 .slider .slides ul li .read-more {
     position: absolute;
@@ -70,12 +74,8 @@
 }
 
 .rss-feed .slides ul li .all{
-    margin-top: 20px;
-    background: rgba(0,0,0,0.7);
-    padding: 20px;
 }
 .rss-feed .slides ul li .text{
-    padding: 20px;
 }
 .rss-feed .slides ul li .text p:last-child{
     display: none;

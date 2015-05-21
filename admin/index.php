@@ -41,11 +41,10 @@ $head['javascript'] = "
         offset: 120
     });
 ";
-$head['jsFiles'][] = "js/datetimepicker.min";
+$head['jsFiles'][] = "js/jquery.datetimepicker";
 $head['jsFiles'][] = "admin/js/script";
 $head['jsFiles'][] = "";
 $head['jsFiles'][] = "js";
-
 
 
 require_once("../".$includeFolder."Head.php");

@@ -79,7 +79,7 @@
                 </select>
                 <label for="score_away">Score Gast</label><input name="score_away"  id="score_away" value="<?php echo $values['score_away'];?>" class="form-control" required>
                 <label for="played_time">Speeltijd</label><input name="played_time"  id="played_time" value="<?php echo $values['played_time'];?>" class="form-control" required>
-                <label for="date">datum</label><input name="date"  id="date" value="<?php echo $values['date'];?>" class="form-control" required>
+                <label for="date">datum</label><input name="date" autocomplete="off" id="date" value="<?php echo $values['date'];?>" class="form-control" required>
                 <br />
                 <input class="btn btn-default" type="submit" name="games" value="Verzenden">
                 <br />
