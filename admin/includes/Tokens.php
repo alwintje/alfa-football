@@ -59,12 +59,14 @@
         ?>
     </div>
 </div>
-<script>
+<?php
+    $javascript[] = "
 
-    jQuery('#datetimepicker').datetimepicker({
-        inline:true,
-        theme:'dark',
-        minDate: 0,
-        format:'unixtime'
-    });
-</script>
+        jQuery('#datetimepicker').datetimepicker({
+            inline:true,
+            theme:'dark',
+            minDate: 0,
+            format:'unixtime'
+        });
+    ";
+?>

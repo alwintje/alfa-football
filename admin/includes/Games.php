@@ -88,10 +88,13 @@
         </div>
     </div>
 </div>
-    <script>
+<?php
+$javascript[] = "
+
         jQuery('#date').datetimepicker({
             minDate: 0
         });
-    </script>
+    ";
+?>
 
 

@@ -169,9 +169,11 @@
     </div>
 </div>
 
-<script>
+<?php
+$javascript[] = "
 
     jQuery('#rev_date').datetimepicker({
         minDate: 0
     });
-</script>
+    ";
+?>

@@ -20,9 +20,11 @@
         </header>
 </div><!-- /container -->
 
-    <script src="js/classie.js"></script>
-    <script src="js/boxesFx.js"></script>
-    <script>
-        new BoxesFx( document.getElementById( 'boxgallery' ) );
-    </script>
+<script src="js/classie.js"></script>
+<script src="js/boxesFx.js"></script>
 
+<?php
+$javascript[] = "
+        new BoxesFx( document.getElementById( 'boxgallery' ) );
+    ";
+?>

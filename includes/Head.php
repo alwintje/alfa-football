@@ -57,6 +57,7 @@
                 echo "<script src='".$val.".js'></script>\n";
             }
         }
+        $javascript = [];
     ?>
 
 </head>
