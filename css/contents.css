@@ -41,7 +41,7 @@
 .container:nth-child(9),
 .container:nth-child(11)
 {
-    background: #333;
+    background: #144159;
 }
 .container:nth-child(0),
 .container:nth-child(2),
@@ -98,16 +98,17 @@
 }
 /* footer */
 
-#contact .footer{
-    max-width: 100%;
+#footer{
     height: 200px;
-    background: #333;
-    text-align: center;
+    min-height: 0;
+    text-align: right;
+    color: #2C9FAC;
 }
 
-.head .date{
+.container .head .date{
     font-size: 13px;
     float: right;
     margin: -30px ;
 
 }
+

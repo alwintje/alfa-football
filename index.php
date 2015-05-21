@@ -11,29 +11,21 @@ $includeFolder = "includes";
 require_once($includeFolder."/Database.php");
 $db = new Database();
 $db->opendb();
-?>
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1; maximum-scale=1; user-scalable=false;width=device-width, height=device-height" >
 
-    <title>Alfa-football</title>
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/index.css" rel="stylesheet" />
-    <link href="css/header.css" rel="stylesheet" />
-    <link href="css/contents.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/component.css" />
-    <link rel="stylesheet" href="css/transitions.php?duration=1000&transition=easeInCirc">
-    <link rel="stylesheet" href="css/slider.css">
-    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+$head = [];
+$head['base'] = false;
+$head['stylesheets'] = [];
+$head['stylesheets'][] = "bootstrap.css";
+$head['stylesheets'][] = "index.css";
+$head['stylesheets'][] = "header.css";
+$head['stylesheets'][] = "contents.css";
+$head['stylesheets'][] = "component.css";
+$head['stylesheets'][] = "transitions.php?duration=1000&transition=easeInCirc";
+$head['stylesheets'][] = "slider.css";
+$head['stylesheets'][] = "custom.css";
 
-    <script src="js/modernizr.custom.js"></script>
-    <script src="js/menu.js"></script>
-    <script src="js/jquery.min.js"></script>
+$head['javascript'] = "
 
-    <script src="js/smooth-scroll.js" ></script>
-    <script>
         smoothScroll.init({
             speed: 1000,
             easing: 'easeInOutCubic',
@@ -42,32 +34,36 @@ $db->opendb();
         });
         var duration = 1000;
         var transition = 'easeInCirc';
-    </script>
-    <script src="js/slider.js" ></script>
-    <script src="js/script.js"></script>
-</head>
-<body>
-    <?php
-        if(isset($_GET['readMore'])){
-            $menu = array(
-                "?terug#home"  =>  "Terug",
-            );
-            require_once($includeFolder."/Header.php");
-            require_once($includeFolder."/Review.php");
+";
+$head['jsFiles'][] = "modernizr.custom";
+$head['jsFiles'][] = "menu";
+$head['jsFiles'][] = "jquery.min";
+$head['jsFiles'][] = "smooth-scroll";
+$head['jsFiles'][] = "modernizr.custom";
+$head['jsFiles'][] = "js";
+$head['jsFiles'][] = "slider";
+$head['jsFiles'][] = "script";
 
-        }else{
-            $menu = array(
-                "#home"  =>  "Home",
-                "#games"  =>  "Wedstrijden",
-                "#oranje"  =>  "Oranje",
-                "#contact"  =>  "Contact",
-                "search" => true,
-            );
-            require_once($includeFolder."/Start.php");
-            require_once($includeFolder."/Header.php");
-            require_once($includeFolder."/Content.php");
-        }
-        require_once($includeFolder."/Footer.php");
-    ?>
-</body>
-</html>
+require_once($includeFolder."/Head.php");
+
+    if(isset($_GET['readMore'])){
+        $menu = array(
+            "?terug#home"  =>  "Terug",
+        );
+        require_once($includeFolder."/Header.php");
+        require_once($includeFolder."/Review.php");
+
+    }else{
+        $menu = array(
+            "#home"  =>  "Home",
+            "#games"  =>  "Wedstrijden",
+            "#oranje"  =>  "Oranje",
+            "#contact"  =>  "Contact",
+            "search" => true,
+        );
+        require_once($includeFolder."/Start.php");
+        require_once($includeFolder."/Header.php");
+        require_once($includeFolder."/Content.php");
+    }
+    require_once($includeFolder."/Footer.php");
+?>
