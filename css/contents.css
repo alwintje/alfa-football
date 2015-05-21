@@ -89,6 +89,14 @@
     font-style: italic;
 }
 
+/* games */
+#games{
+    color:#000 ;
+    background: url(../img/Abe_Lenstra_Stadion_pano_03m.jpg);
+    background-size: cover;
+    border-top:3px solid #000 ;
+    border-bottom:3px solid #000 ;
+}
 /* footer */
 
 #contact .footer{
