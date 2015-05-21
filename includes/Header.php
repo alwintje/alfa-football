@@ -11,7 +11,7 @@
     <div class="inner">
         <div class="logo" >
             <a href="#start" data-scroll>
-                <img src="img/logo.png" />
+                <img src="img/logo.png" alt="logo"/>
             </a>
         </div>
         <div class="navigation">
@@ -30,11 +30,15 @@
                         echo "<li>";
                         echo "<input type='text' id='search' placeholder='Zoeken..' autocomplete='off'/>";
                         echo "</li>";
-                        echo "<div id='searchContent'>";
-                        echo "</div>";
                     }
                 ?>
             </ul>
+            <?php
+                // Staat hier i.v.m. validatie, anders staat een div in de ul tag.
+                if($search){
+                    echo "<div id='searchContent'></div>";
+                }
+            ?>
         </div>
     </div>
 </div>

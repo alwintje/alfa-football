@@ -6,21 +6,14 @@
  * Time: 14:06
  */
 
-if(!isset($db)){
-    require_once($_GET['url']."Database.php");
-    $db = new Database();
-    $db->opendb();
-
-}
-
 class Update{
 
     private $table = "";
     private $do = "UPDATE {{table}}";
     private $where = "";
     private $update = "";
-    private $db = "";
-
+    private $db = false;
+    private $err = 0;
 
     public function setTable($table){
         $this->table = $table;
@@ -28,7 +21,15 @@ class Update{
     }
 
     public function addWhere($collumn, $value){
-        $value = $this->db->esc_str($value);
+        if($this->db == false){
+            if($this->err == 0){
+                echo "Database vergeten te linken.<br />\n";
+                echo "Gebruik: <code>->setDb(\$db)</code>.<br />\n";
+                $this->err++;
+            }
+        }else{
+            $value = $this->db->esc_str($value);
+        }
         if(strlen($this->where) == 0){
             $this->where = "WHERE ".$collumn."='".$value."'";
         }else{
@@ -38,7 +39,15 @@ class Update{
     }
 
     public function addUpdate($collumn, $value){
-        $value = $this->db->esc_str($value);
+        if($this->db == false){
+            if($this->err == 0){
+                echo "Database vergeten te linken.<br />\n";
+                echo "Gebruik: <code>->setDb(\$db)</code>.<br />\n";
+                $this->err++;
+            }
+        }else{
+            $value = $this->db->esc_str($value);
+        }
 
         if(strlen($this->update) == 0){
             $this->update = "SET ".$collumn."='".$value."'";
@@ -61,7 +70,22 @@ class Update{
     }
 
     public function doquery(){
-        $this->db->doquery($this->do." ".$this->update." ".$this->where, $this->table);
+        if($this->db == false){
+            if($this->err == 0){
+                echo "Database vergeten te linken?<br />\n";
+                echo "Gebruik: <code>->setDb(\$db)</code>.<br />\n";
+                $this->err++;
+            }
+
+        }
+        if(strlen($this->update) == 0){
+            echo "Niks om toe te voegen of aan te passen.<br />\n";
+            echo "Gebruik: <code>->addUpdate(\"Kolom\",\"Waarde\")</code><br />\n";
+            $this->err++;
+        }
+        if($this->err == 0){
+            $this->db->doquery($this->do . " " . $this->update . " " . $this->where, $this->table);
+        }
         //$sql = $this->db->doquery("SELECT * FROM {{table}}","reviews");
         //echo mysqli_num_rows($sql);
         //echo $this->do." ".$this->update." ".$this->where;

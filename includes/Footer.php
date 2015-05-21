@@ -7,18 +7,19 @@
  */
 ?>
 
-<div id="footer" class="scroll-url container">
-    <div class="head">
-        <h1>&copy; 2015, Yaron en Alwin</h1>
+    <div id="footer" class="scroll-url container">
+        <div class="head">
+            <h1>&copy; 2015, Yaron en Alwin</h1>
+        </div>
     </div>
-</div>
-<script>
+
     <?php
         foreach($javascript as $val){
-            echo $val;
+            echo "<script>\n";
+            echo $val."\n";
+            echo "</script>\n";
         }
      ?>
-</script>
 
 
 </body>

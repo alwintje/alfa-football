@@ -59,7 +59,7 @@
                 <label for="team_home">Thuis team</label>
                 <select name="team_home" id="team_home" class="form-control" required>
                     <?php
-                        $sqlTeams = $db->doquery("SELECT * FROM {{table}}","teams");
+                        $sqlTeams = $db->doquery("SELECT * FROM {{table}} ORDER BY name ASC","teams");
                         while($row = mysqli_fetch_array($sqlTeams)){
                             echo "<option value='".$row['id']."'>".$row['name']."</option>";
                         }
@@ -71,10 +71,10 @@
                 <label for="team_away">Gast team</label>
                 <select name="team_away" id="team_away" class="form-control" required>
                     <?php
-                    $sqlTeams = $db->doquery("SELECT * FROM {{table}}","teams");
-                    while($row = mysqli_fetch_array($sqlTeams)){
-                        echo "<option value='".$row['id']."'>".$row['name']."</option>";
-                    }
+                        $sqlTeams = $db->doquery("SELECT * FROM {{table}} ORDER BY name ASC","teams");
+                        while($row = mysqli_fetch_array($sqlTeams)){
+                            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+                        }
                     ?>
                 </select>
                 <label for="score_away">Score Gast</label><input name="score_away"  id="score_away" value="<?php echo $values['score_away'];?>" class="form-control" required>

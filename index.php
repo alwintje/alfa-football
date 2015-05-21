@@ -15,7 +15,7 @@ $db->opendb();
 $head = [];
 $head['base'] = false;
 $head['stylesheets'] = [];
-$head['stylesheets'][] = "css/transitions.php?duration=1000&transition=easeInCirc";
+$head['stylesheets'][] = "css/transitions.php?duration=1000&amp;transition=easeInCirc";
 $head['stylesheets'][] = "css/slider.css";
 $head['stylesheets'][] = "css/custom.css";
 

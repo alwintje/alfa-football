@@ -12,7 +12,21 @@
         <h1>Teams</h1>
     </div>
     <div class="content">
-        <form action="admin/#teams" target="_top">
+        <?php
+            if(isset($_POST['addTeam'])){
+                if(strlen($_POST['name']) > 2){
+                    $update = new Update();
+                    $update->setDb($db)
+                        ->setType("insert")
+                        ->setTable("teams")
+                        ->addUpdate("name",$_POST['name'])
+                        ->doquery();
+                }else{
+                    echo "Naam is niet lang genoeg.";
+                }
+            }
+        ?>
+        <form action="admin/#teams" target="_top" method="post">
             <label for="name">Naam</label>
             <input type="text" name="name" id="name" class="form-control" />
             <br />
@@ -25,7 +39,7 @@
                 </th>
             </tr>
             <?php
-                $sql = $db->doquery("SELECT * FROM {{table}}","teams");
+                $sql = $db->doquery("SELECT * FROM {{table}} ORDER BY name ASC","teams");
                 while($row = mysqli_fetch_array($sql)){
                     echo "<tr>";
                     echo "<td>";

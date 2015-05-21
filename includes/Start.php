@@ -7,7 +7,7 @@
         </div>
         <header class="codrops-header">
             <div class="background">
-                <img src="img/logo_start.png" />
+                <img src="img/logo_start.png" alt="logo start"/>
                 <h1>
                     <span>
                         Alwin Kroesen en Yaron Lambers
