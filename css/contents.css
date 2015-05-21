@@ -41,7 +41,7 @@
 .container:nth-child(9),
 .container:nth-child(11)
 {
-    background: #123046;
+    background: #333;
 }
 .container:nth-child(0),
 .container:nth-child(2),
@@ -50,7 +50,7 @@
 .container:nth-child(8),
 .container:nth-child(10)
 {
-    background: #333;
+    background: #123046;
 }
 .container .content .table{
     width: 100%;
