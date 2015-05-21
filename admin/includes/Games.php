@@ -1,40 +1,43 @@
 <div id="games" class="scroll-url container">
-    <div class="head">
-        <h1>Voeg een wedstrijd uitslag  toe</h1>
-    </div>
-    <div class="content">
-        <div class="form">
-            <form method="post" action="admin/#games" target="_top" >
-                <?php
+    <div class="form">
+       <?php
 
+        $values = [
+            "name"=>"",
+            "message"=>"",
+            "email"=>""
+        ];
 
-                if(isset($_POST['verzend_score'])){
+        if(isset($_POST['contact'])){
+            $name = "name='".mysql_real_escape_string($_POST['name'])."'";
+            $message = "message='".mysql_real_escape_string($_POST['message'])."'";
+            $email = "email='".mysql_real_escape_string($_POST['email'])."'";
 
-                    $user = $security->checksession();
+            $errors = [];
 
-                    $team_home = "home='".$db->esc_str($_POST['team_home'])."'";
-                    $team_away = "away='".$db->esc_str($_POST['team_away'])."'";
-                    $date = "date='".$db->esc_str($_POST['date'])."'";
-                    $played_time = "time='".$db->esc_str($_POST['played_time'])."'";
+            if(strlen($_POST['name']) < 4){$errors[] = "Naam is niet lang genoeg.";}
+            if(strlen($_POST['message']) < 4){$errors[] = "Het bericht is niet lang genoeg.";}
+            if(strlen($_POST['email']) < 4){$errors[] = "Het email adress klopt niet";}
 
-                        $db->doquery("INSERT INTO {{table}} SET $team_home, $team_away, $date ,$played_time","games");
-                                    }
-                ?>
-
-                <label for="title"> Thuis Team </label><input name="home" id="team_home" " type="text" class="form-control"/>
-                <label for="intro">Gast Team</label><input name="away" id="team_away"  type="text" class="form-control"/>
-                <label for="intro">Datum</label><input name="date" id="date"  type="text" class="form-control"/>
-                <label for="intro">Gespeelde tijd</label><input name="time" id="played_time" type="text" class="form-control"/>
-
-                <input type="submit" class="btn btn-default" name="verzend_score" value="Verstuur"/>
-            </form>
-        </div>
-    </div>
+            if(count($errors) == 0){
+                $db->doquery("INSERT INTO {{table}} SET $name, $message, $email ","contact");
+            }else{
+                $values = [
+                    "name"=>$_POST['name'],
+                    "message"=>$_POST['message'],
+                    "email"=>$_POST['email'],
+                ];
+                foreach($errors as $val){
+                    echo $val."<br />";
+                }
+            }
+        }
+        ?>
+        <form method="post" action="#contact">
+            <label for="name">Naam</label><input name="name" id="name" value="<?php echo $values['name'];?>"  type="text" class="form-control" required/>
+            <label for="email">Email</label><input name="email" id="email" value="<?php echo $values['email'];?>" type="text" class="form-control" required/>
+            <label for="message">bericht</label><textarea name="message"  id="message" value="<?php echo $values['message'];?>" class="form-control" required></textarea>
+            <br />
+            <input class="btn btn-default" type="submit" name="contact" value="Verzenden">
+        </form>
 </div>
-
-<script>
-
-    jQuery('#rev_date').datetimepicker({
-        minDate: 0
-    });
-</script>

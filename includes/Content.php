@@ -65,10 +65,10 @@
 
             if(count($query) > 0){
                 while ($row = mysqli_fetch_array($query)){?>
-                    <table>
+                    <table class="table">
                         <tr>
-                            <th>Id</th> <th>Thuis</th> <th>Uit</th>  <th> Datum </th>
-                        <tr>
+                            <th>Id</th> <th>Thuis</th> <th>Uit</th>  <th> Datum </th> <th>Gespeelde tijd</th>
+                        </tr>
                         <tr>
                             <td> <?php echo $row['id']; ?></td>
                             <td> <?php echo $row['team_home']; ?></td>
