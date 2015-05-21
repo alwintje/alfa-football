@@ -15,14 +15,9 @@ $db->opendb();
 $head = [];
 $head['base'] = false;
 $head['stylesheets'] = [];
-$head['stylesheets'][] = "bootstrap.css";
-$head['stylesheets'][] = "index.css";
-$head['stylesheets'][] = "header.css";
-$head['stylesheets'][] = "contents.css";
-$head['stylesheets'][] = "component.css";
-$head['stylesheets'][] = "transitions.php?duration=1000&transition=easeInCirc";
-$head['stylesheets'][] = "slider.css";
-$head['stylesheets'][] = "custom.css";
+$head['stylesheets'][] = "css/transitions.php?duration=1000&transition=easeInCirc";
+$head['stylesheets'][] = "css/slider.css";
+$head['stylesheets'][] = "css/custom.css";
 
 $head['javascript'] = "
 
@@ -35,14 +30,14 @@ $head['javascript'] = "
         var duration = 1000;
         var transition = 'easeInCirc';
 ";
-$head['jsFiles'][] = "modernizr.custom";
-$head['jsFiles'][] = "menu";
-$head['jsFiles'][] = "jquery.min";
-$head['jsFiles'][] = "smooth-scroll";
-$head['jsFiles'][] = "modernizr.custom";
+$head['jsFiles'][] = "js/modernizr.custom";
+$head['jsFiles'][] = "js/menu";
+$head['jsFiles'][] = "js/jquery.min";
+$head['jsFiles'][] = "js/smooth-scroll";
+$head['jsFiles'][] = "js/modernizr.custom";
 $head['jsFiles'][] = "js";
-$head['jsFiles'][] = "slider";
-$head['jsFiles'][] = "script";
+$head['jsFiles'][] = "js/slider";
+$head['jsFiles'][] = "js/script";
 
 require_once($includeFolder."/Head.php");
 

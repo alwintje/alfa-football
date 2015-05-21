@@ -26,40 +26,30 @@ if(isset($_POST['login'])){
 if(isset($_GET['logout'])){
     $security->logout();
 }
-?>
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1; maximum-scale=1; user-scalable=false;width=device-width, height=device-height" >
 
-    <title>Alfa-football</title>
-    <base href="../" target="_blank"/>
-    <link href="css/bootstrap.css" rel="stylesheet" />
-    <link href="css/index.css" rel="stylesheet" />
-    <link href="css/header.css" rel="stylesheet" />
-    <link href="css/contents.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/component.css" />
-    <link href="admin/css/admin.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
+$head = [];
+$head['base'] = true;
+$head['stylesheets'] = [];
+$head['stylesheets'][] = "admin/css/admin.css";
+$head['stylesheets'][] = "css/jquery.datetimepicker.css";
 
-    <script src="js/menu.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.datetimepicker.js"></script>
-    <script src="admin/js/script.js"></script>
+$head['javascript'] = "
+    smoothScroll.init({
+        speed: 1000,
+        easing: 'easeInOutCubic',
+        updateURL: false,
+        offset: 120
+    });
+";
+$head['jsFiles'][] = "js/menu";
+$head['jsFiles'][] = "js/jquery.min";
+$head['jsFiles'][] = "js/datetimepicker.min";
+$head['jsFiles'][] = "admin/js/script";
+$head['jsFiles'][] = "js/smooth-scroll";
+$head['jsFiles'][] = "js";
 
-    <script src="js/smooth-scroll.js" ></script>
-    <script>
-        smoothScroll.init({
-            speed: 1000,
-            easing: 'easeInOutCubic',
-            updateURL: false,
-            offset: 120
-        });
-    </script>
-</head>
-<body>
-    <?php
+require_once("../".$includeFolder."Head.php");
+
         if($security->checksession() == false){
             $menu = array(
                 "?"  =>  "Terug naar de website",

@@ -21,10 +21,22 @@
 
     <?php
         if($head['base']){
-            echo "<base href='../' target='_top'/>";
+            echo "<base href='../' target='_top'/>\n\n";
         }
+        $stylesheets = [
+            "css/bootstrap.css",
+            "css/index.css",
+            "css/header.css",
+            "css/contents.css",
+            "css/component.css",
+        ];
+
+        foreach($stylesheets as $val) {
+            echo "<link rel='stylesheet' type='text/css' href='" . $val . "' />\n";
+        }
+
         foreach($head['stylesheets'] as $val) {
-            echo "<link rel='stylesheet' type='text/css' href='css/" . $val . "' />\n";
+            echo "<link rel='stylesheet' type='text/css' href='" . $val . "' />\n";
         }
         echo "\n";
         foreach($head['jsFiles'] as $val) {
@@ -33,7 +45,7 @@
                     echo $head['javascript'];
                 echo "</script>\n";
             }else{
-                echo "<script src='js/".$val.".js'></script>\n";
+                echo "<script src='".$val.".js'></script>\n";
             }
         }
     ?>
