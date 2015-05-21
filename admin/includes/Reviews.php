@@ -32,13 +32,14 @@
 
                     if(isset($_POST['addReview'])){
 
-
-                        $title = "title='".mysql_real_escape_string($_POST['title'])."'";
+                        $title = "title='".$db->esc_str($_POST['title'])."'";
                         $intro = "intro='".mysql_real_escape_string($_POST['intro'])."'";
                         $content = "content='".mysql_real_escape_string($_POST['content'])."'";
                         $author = "author='".mysql_real_escape_string($_POST['author'])."'";
                         $date = "rev_date='".mysql_real_escape_string($_POST['rev_date'])."'";
                         $image = "image='".mysql_real_escape_string($_POST['image'])."'";
+
+
 
                         $errors = [];
 
@@ -70,7 +71,13 @@
 
                 <label for="title">Titel</label><input name="title" id="title" value="<?php echo $values['title'];?>" type="text" class="form-control"/>
                 <label for="intro">Inleiding</label><input name="intro" id="intro" value="<?php echo $values['intro'];?>" type="text" class="form-control"/>
-                <label for="content">Bericht</label><textarea name="content" value="<?php echo $values['content'];?>" id="content" class="form-control"></textarea>
+<!--                <label for="content">Bericht</label><textarea name="content" value="--><?php //echo $values['content'];?><!--" id="content" class="form-control"></textarea>-->
+                 <label>Bericht</label>
+                <textarea name="content" style="display: none;" id="text"></textarea>
+                <div contenteditable="true" class="form-control" id="text_div" class="editable-div"
+                     onkeyup="document.querySelector('#text').innerHTML = document.querySelector('#text_div').innerHTML;"><?php echo $values['content'];?>
+                </div>
+
                 <label for="author">Maker</label><input name="author" value="<?php echo $values['author'];?>" id="author" class="form-control" >
                 <label for="rev_date">Datum</label><br/><input name="rev_date" value="<?php echo $values['rev_date'];?>" id="rev_date" class="form-control"><br/>
                 <label for="image">Afbeelding</label><input name="image" value="<?php echo $values['image'];?>" id="image" class="form-control" >
