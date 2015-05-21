@@ -44,6 +44,8 @@
                 <label for="message">Score Gast</label><textarea name="message"  id="message" value="<?php echo $values['message'];?>" class="form-control" required></textarea>
                 <br />
                 <input class="btn btn-default" type="submit" name="contact" value="Verzenden">
+                <br />
+                <br />
             </form>
         </div>
     </div>
