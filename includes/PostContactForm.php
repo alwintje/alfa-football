@@ -28,14 +28,8 @@
 //    )"))
 //{
 
-require_once("Database.php");
-$db = new Database();
-$db->opendb();
 
 
-$name = "name='".mysql_real_escape_string($_POST['name'])."'";
-$message = "message='".mysql_real_escape_string($_POST['message'])."'";
-$email = "email='".mysql_real_escape_string($_POST['email'])."'";
 
-    $db->doquery("INSERT INTO {{table}} SET $name, $message, $email ","contact");
+
 

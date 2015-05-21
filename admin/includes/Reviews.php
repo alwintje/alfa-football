@@ -80,12 +80,11 @@
         </div>
     </div>
     <div class="head">
-        <h1>Reviews</h1>
-    </div>
-    <div class="content" id="reviewContents">
+      <h1>Reviews</h1>
 
     </div>
 </div>
+
 
 <script>
 
