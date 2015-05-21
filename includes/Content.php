@@ -28,59 +28,88 @@
         </div>
     </div>
 </div>
+<?php
+
+    $teamsQuery = $db->doquery("SELECT * FROM {{table}}","teams");
+    $teams = [];
+    while($row = mysqli_fetch_array($teamsQuery)){
+        $teams[$row['id']] = $row['name'];
+    }
+
+?>
 <div id="games" class="scroll-url container">
     <div class="head">
         <h1>Gespeelde wedstrijden</h1>
     </div>
     <div class="content">
         <?php
+        $query = $db->doquery("SELECT * FROM {{table}} WHERE date < NOW()","games");
+        if(mysqli_num_rows($query) > 0) {
+            ?>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Thuis</th>
+                    <th>Uit</th>
+                    <th>Datum</th>
+                    <th>Gespeelde tijd</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                while ($row = mysqli_fetch_array($query)) {
 
-            $query = $db->doquery("SELECT * FROM {{table}}","games");
-
-            if(count($query) > 0){
-                while($row = mysqli_fetch_array($query)){?>
-                 <table>
-                     <tr>
-                        <th>Id</th> <th>Thuis</th> <th>Uit</th> <th>Thuis score</th> <th> Uit score</th> <th>Datum</th>
-                     <tr>
-                     <tr>
-                        <td> <?php echo $row['id']; ?></td>
-                        <td> <?php echo $row['team_home']; ?></td>
-                        <td> <?php echo $row['team_away']; ?></td>
-                        <td> <?php echo $row['date'];?></td>
-                        <td> <?php echo $row['played_time'];?></td>
-                         <?php
-                              }
-                         }
-                         ?>
-                     </tr>
-                 </table>
+                ?>
+                    <tr>
+                        <td> <?php echo $teams[$row['team_home']] ?></td>
+                        <td> <?php echo $teams[$row['team_away']] ?></td>
+                        <td> <?php echo $row['date']; ?></td>
+                        <td> <?php echo $row['played_time']; ?></td>
+                    </tr>
+                <?php
+                }
+                ?>
+                </tbody>
+            </table>
+        <?php
+        }
+        ?>
     </div>
     <div class="head">
         <h1>Aankomende wedstrijden</h1>
     </div>
     <div class="content">
         <?php
-            $query = $db->doquery("SELECT * FROM {{table}}","games");
-
-            if(count($query) > 0){
-                while ($row = mysqli_fetch_array($query)){?>
-                    <table class="table">
-                        <tr>
-                            <th>Id</th> <th>Thuis</th> <th>Uit</th>  <th> Datum </th> <th>Gespeelde tijd</th>
-                        </tr>
-                        <tr>
-                            <td> <?php echo $row['id']; ?></td>
-                            <td> <?php echo $row['team_home']; ?></td>
-                            <td> <?php echo $row['team_away']; ?></td>
-                            <td> <?php echo $row['date'];?></td>
-                            <td> <?php echo $row['played_time'];?></td>
-                            <?php
-                                }
-                            }
-                            ?>
-                        </tr>
-                    </table>
+            $query = $db->doquery("SELECT * FROM {{table}} WHERE date > NOW()","games");
+            if(mysqli_num_rows($query) > 0) {
+        ?>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Thuis</th>
+                    <th>Uit</th>
+                    <th>Datum</th>
+                    <th>Gespeelde tijd</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                    while ($row = mysqli_fetch_array($query)) {
+                ?>
+                    <tr>
+                        <td> <?php echo $teams[$row['team_home']] ?></td>
+                        <td> <?php echo $teams[$row['team_away']] ?></td>
+                        <td> <?php echo $row['date']; ?></td>
+                        <td> <?php echo $row['played_time']; ?></td>
+                    </tr>
+                <?php
+                    }
+                ?>
+                </tbody>
+            </table>
+        <?php
+            }
+        ?>
     </div>
 </div>
 
@@ -213,15 +242,15 @@ class Reviews{
     public function generateHtml(){
         $html = "";
         foreach($this->reviews as $val){
-            $html .= "<li data-repeat='no'";
-            $html .= "data-title='".$val['title']."'";
-            $html .= "data-color='".$val['color']."'";
-            $html .= "data-id='".$val['id']."'";
-            $html .= "data-readmore='".$val['readmore']."'";
+            $html .= "<li data-repeat='no' ";
+            $html .= "data-title='".$val['title']."' ";
+            $html .= "data-color='".$val['color']."' ";
+            $html .= "data-id='".$val['id']."' ";
+            $html .= "data-readmore='".$val['readmore']."' ";
             if($val['image'] != false && $val['image'] != ""){
-                $html .= "data-image='".$val['image']."'";
+                $html .= "data-image='".$val['image']."' ";
             }
-            $html .= ">".$val['content']."</li>";
+            $html .= " >".$val['content']."</li>";
         }
         return $html;
     }

@@ -14,19 +14,24 @@ if(count($query) > 0){
 ?>
 
     <div class="container">
-        <div class="header_image">
-            <img src="<?php echo $row['image']; ?> ">
-        </div>
-
+        <?php
+            if($row['image'] != "") {
+        ?>
+            <div class="header_image">
+                <img src="<?php echo $row['image']; ?> ">
+            </div>
+        <?php
+            }
+        ?>
 
         <div class="head">
-            <h1><?php echo $row['title']; ?></h1>
-                <?php
-                    $phpDate = strtotime( $row['rev_date'] );
-                    $mysqlDate = date( 'd-m-Y H:i', $phpDate );
-                ?>
-                <div class="date"> <?php echo $mysqlDate; ?> <br/> </div>
-                <div class="intro"> <?php echo $row['intro']; ?> </div>
+            <?php
+                echo "<h1>".$row['title']."</h1>";
+                $phpDate = strtotime( $row['rev_date'] );
+                $mysqlDate = date( 'd-m-Y H:i', $phpDate );
+            ?>
+            <div class="date"> <?php echo $mysqlDate; ?> <br/> </div>
+            <div class="intro"> <?php echo $row['intro']; ?> </div>
         </div>
 
         <div class="content">
@@ -36,9 +41,9 @@ if(count($query) > 0){
                 <span class="italic">Auteur:
                     <?php
 
-                    $sql = $db->doquery("SELECT * FROM {{table}} WHERE id='".$row['author']."'", "users");
-                    $r = mysqli_fetch_array($sql);
-                    echo $r['name'] ;
+                        $sql = $db->doquery("SELECT * FROM {{table}} WHERE id='".$row['author']."'", "users");
+                        $r = mysqli_fetch_array($sql);
+                        echo $r['name'] ;
 
                     ?><br/>
                 </span>

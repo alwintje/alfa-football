@@ -66,9 +66,9 @@
 .container .content .table tr:hover td{
     background: rgba(0,0,0,0.2);
 }
-.container .content .table th:last-child{
-    width: 100%;
-}
+/*.container .content .table th:last-child{*/
+    /*width: 100%;*/
+/*}*/
 
 /* revieuws page */
 
@@ -95,6 +95,13 @@
     background: url(../img/background_games.jpg);
     background-position: center center;
     background-size: cover;
+}
+#games .head, #games .content{
+    padding: 10px;
+    background: rgba(0,0,0,0.4);
+}
+#games .table tr:hover td{
+    background: rgba(255,255,255,0.3);
 }
 /* footer */
 
