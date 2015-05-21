@@ -91,12 +91,10 @@
 
 /* games */
 #games{
-    color:#000 ;
-    background: url(../img/Abe_Lenstra_Stadion_pano_03m.jpg);
-    background-size: cover;
-    border-top:3px solid #000 ;
-    border-bottom:3px solid #000 ;
     min-height: 100%;
+    background: url(../img/Abe_Lenstra_Stadion_pano_03m.jpg);
+    background-position: center center;
+    background-size: cover;
 }
 /* footer */
 
