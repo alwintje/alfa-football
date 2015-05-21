@@ -49,14 +49,28 @@
                     }
                 }
             }
+
+
+                $sqlTeams = $db->doquery("SELECT * FROM {{table}}","teams");
+                $row = mysqli_fetch_array($sqlTeams);
+                //echo $row['name'] ;
+
             ?>
             <form method="post" action="" target="_top">
-                <label for="team_home">Thuis team</label><input name="team_home" id="team_home" value="<?php echo $values['team_home'];?>"  type="text" class="form-control" required/>
+                <?php
+
+                    while(mysqli_fetch_array($sqlTeams)){
+                        echo $row['name'];
+                    }
+
+
+                ?>
+                <label for="team_home">Thuis team</label><input name="team_home" id="team_home" value="<?php echo $row['name'];?>"  type="text" class="form-control" required/>
                 <label for="score_home">Score Thuis</label><input name="score_home"  id="score_home" value="<?php echo $values['score_home'];?>" class="form-control" required>
-                <label for="team_away">Gast team</label><input name="team_away" id="team_away" value="<?php echo $values['team_away'];?>" type="text" class="form-control" required/>
+                <label for="team_away">Gast team</label><input name="team_away" id="team_away" value="<?php echo $row['name'];?>" type="text" class="form-control" required/>
                 <label for="score_away">Score Gast</label><input name="score_away"  id="score_away" value="<?php echo $values['score_away'];?>" class="form-control" required>
                 <label for="played_time">Speeltijd</label><input name="played_time"  id="played_time" value="<?php echo $values['played_time'];?>" class="form-control" required>
-                <label for="date">date</label><input name="date"  id="date" value="<?php echo $values['date'];?>" class="form-control" required>
+                <label for="date">datum</label><input name="date"  id="date" value="<?php echo $values['date'];?>" class="form-control" required>
                 <br />
                 <input class="btn btn-default" type="submit" name="games" value="Verzenden">
                 <br />
@@ -64,3 +78,12 @@
             </form>
         </div>
     </div>
+
+    <script>
+
+        jQuery('#date').datetimepicker({
+            minDate: 0
+        });
+    </script>
+
+
