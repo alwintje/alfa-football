@@ -10,6 +10,8 @@ $includeFolder = "includes/";
 require_once("../".$includeFolder."Database.php");
 $db = new Database();
 $db->opendb();
+require_once($includeFolder."Update.php");
+
 
 
 require_once($includeFolder."Security.php");

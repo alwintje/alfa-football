@@ -17,9 +17,9 @@ class Update{
 
     private $table = "";
     private $do = "UPDATE {{table}}";
-    private $where = [];
-    private $update = [];
-
+    private $where = "";
+    private $update = "";
+    private $db = "";
 
 
     public function setTable($table){
@@ -28,28 +28,43 @@ class Update{
     }
 
     public function addWhere($collumn, $value){
-        $value = $db->esc_str($value);
-        if(count($this->where) == 0){
+        $value = $this->db->esc_str($value);
+        if(strlen($this->where) == 0){
             $this->where = "WHERE ".$collumn."='".$value."'";
         }else{
-            $this->where .= " ".$collumn."='".$value."'";
+            $this->where .= ", ".$collumn."='".$value."'";
         }
         return $this;
     }
 
     public function addUpdate($collumn, $value){
-        $value = $db->esc_str($value);
+        $value = $this->db->esc_str($value);
 
-        if(count($this->update) == 0){
+        if(strlen($this->update) == 0){
             $this->update = "SET ".$collumn."='".$value."'";
         }else{
-            $this->update .= " ".$collumn."='".$value."'";
+            $this->update .= ", ".$collumn."='".$value."'";
         }
         return $this;
     }
+    public function setType($type){
+        if($type == "insert"){
+            $this->do = "INSERT INTO {{table}}";
+        }else{
+            $this->do = "UPDATE {{table}}";
+        }
+        return $this;
+    }
+    public function setDb($db){
+        $this->db = $db;
+        return $this;
+    }
 
-    public function getUpdate(){
-        $db->doquery("UPDATE {{table}} ".$this->update." ".$this->where, $this->table);
+    public function doquery(){
+        $this->db->doquery($this->do." ".$this->update." ".$this->where, $this->table);
+        //$sql = $this->db->doquery("SELECT * FROM {{table}}","reviews");
+        //echo mysqli_num_rows($sql);
+        //echo $this->do." ".$this->update." ".$this->where;
     }
 
 

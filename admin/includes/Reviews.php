@@ -14,10 +14,15 @@
     <div class="content">
         <div class="form">
                 <?php
-
+                $update = new Update();
                     if(isset($_GET['deleteReview'])){
-                        $db->doquery("UPDATE {{table}} SET deleted=TRUE WHERE id='".$_GET['deleteReview']."'","reviews");
-                        //$db->doquery("DELETE FROM {{table}} WHERE id='".$_GET['deleteReview']."'","reviews");
+                        $update = new Update();
+                        $update->setType("update")
+                            ->setDb($db)
+                            ->addUpdate("deleted",1)
+                            ->addWhere("id",$_GET['deleteReview'])
+                            ->setTable("reviews")
+                            ->doquery();
                     }
                     $values = [
                         "title"     =>  "",
@@ -35,17 +40,8 @@
                 ?>
                 <?php
 
-                    if(isset($_GET['editRev'])){
+                if(isset($_GET['editRev'])){
 
-                        $sql = $db->doquery("SELECT * FROM {{table}} WHERE id='".$_GET['editRev']."' LIMIT 1","reviews");
-                        $row = mysqli_fetch_array($sql);
-                        $values = [
-                            "title"     =>  $row['title'],
-                            "intro"     =>  $row['intro'],
-                            "content"   =>  $row['content'],
-                            "date"      =>  $row['rev_date'],
-                            "image"     =>  $row['image']
-                        ];
                         $sendValues = [
                             "sendUrl"   =>  "admin/?editRev=".$_GET['editRev']."#reviews",
                             "sendName"  =>  "editReview",
@@ -60,38 +56,42 @@
                     if(isset($_POST['addReview']) || isset($_POST['editReview'])){
 
                         $user = $security->checksession();
-
-                        $title      = "title='".$db->esc_str($_POST['title'])."'";
-                        $intro      = "intro='".$db->esc_str($_POST['intro'])."'";
-                        $content    = "content='".$db->esc_str($_POST['content'])."'";
-                        $author     = "author='".$user['id']."'";
-                        $date       = "rev_date='".$db->esc_str($_POST['rev_date'])."'";
-                        $image      = "image='".$db->esc_str($_POST['image'])."'";
-
-
-
                         $errors = [];
 
                         if(strlen($_POST['title']) < 4){$errors[] = "Titel is niet lang genoeg.";}
                         if(strlen($_POST['intro']) < 4){$errors[] = "Intro is niet lang genoeg.";}
                         if(strlen($_POST['content']) < 4){$errors[] = "Inhoud is niet lang genoeg.";}
                         if(strlen($_POST['rev_date']) < 4){$errors[] = "Datum is niet gekozen.";}
-                        //if(strlen($_POST['image']) < 4){$errors[] = " Acteur is niet lang genoeg.";}
 
                         if(count($errors) == 0){
-                            if(isset($_POST['editReview']) && isset($_GET['editRev'])){
-                                $db->doquery("UPDATE {{table}} SET $title, $intro, $content ,$date,$author,$image WHERE id='".$_GET['editRev']."'","reviews");
 
-                                $values = [
-                                    "title"     =>  $_POST['title'],
-                                    "intro"     =>  $_POST['intro'],
-                                    "content"   =>  $_POST['content'],
-                                    "date"      =>  $_POST['rev_date'],
-                                    "image"     =>  $_POST['image'],
-                                ];
+                            if(isset($_POST['editReview']) && isset($_GET['editRev'])){
+                                $update = new Update();
+                                $update->setType("update")
+                                    ->setDb($db)
+                                    ->addUpdate("title",$_POST['title'])
+                                    ->addUpdate("intro",$_POST['intro'])
+                                    ->addUpdate("content",$_POST['content'])
+                                    ->addUpdate("author",$user['id'])
+                                    ->addUpdate("rev_date",$_POST['rev_date'])
+                                    ->addUpdate("image",$_POST['image'])
+                                    ->addWhere("id",$_GET['editRev'])
+                                    ->setTable("reviews")
+                                    ->doquery();
                                 echo "Opgeslagen!<br />";
                             }elseif(!isset($_GET['editRev'])){
-                                $db->doquery("INSERT INTO {{table}} SET $title, $intro, $content ,$date,$author,$image","reviews");
+
+                                $update = new Update();
+                                $update->setType("insert")
+                                    ->setDb($db)
+                                    ->addUpdate("title",$_POST['title'])
+                                    ->addUpdate("intro",$_POST['intro'])
+                                    ->addUpdate("content",$_POST['content'])
+                                    ->addUpdate("author",$user['id'])
+                                    ->addUpdate("rev_date",$_POST['rev_date'])
+                                    ->addUpdate("image",$_POST['image'])
+                                    ->setTable("reviews")
+                                    ->doquery();
                                 echo "Toegevoegd!<br />";
                             }else{
                                 echo "Er heeft zich een fout opgetreden.<br />";
@@ -109,6 +109,20 @@
                                 echo $val."<br />";
                             }
                         }
+                    }
+                    if(isset($_GET['editRev'])) {
+
+                        $sql = $db->doquery("SELECT * FROM {{table}} WHERE id='" . $_GET['editRev'] . "' LIMIT 1", "reviews");
+                        $row = mysqli_fetch_array($sql);
+
+                        $values = [
+                            "title"     =>  $row['title'],
+                            "intro"     =>  $row['intro'],
+                            "content"   =>  $row['content'],
+                            "date"      =>  $row['rev_date'],
+                            "image"     =>  $row['image']
+                        ];
+
                     }
                 ?>
 
@@ -151,7 +165,7 @@
         <h1>Reviews</h1>
     </div>
     <div class="content" id="reviewContents">
-
+<!--        Wordt ingevult door javascript (admin/js/script.js)-->
     </div>
 </div>
 
