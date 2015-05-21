@@ -16,14 +16,6 @@
             ];
 
             if(isset($_POST['games'])){
-
-                $home      = "team_home='".$db->esc_str($_POST['team_home'])."'";
-                $away      = "team_away='".$db->esc_str($_POST['team_away'])."'";
-                $scoreHome    = "score_home='".$db->esc_str($_POST['score_home'])."'";
-                $scoreAway = "score_away='".$db->esc_str($_POST['score_away'])."'";
-                $playTime       = "played_time='".$db->esc_str($_POST['played_time'])."'";
-                $date      = "date='".$db->esc_str($_POST['date'])."'";
-
                 $errors = [];
 
                 if(strlen($_POST['team_home']) < 1){$errors[] = "Naam is niet lang genoeg.";}
@@ -34,7 +26,19 @@
                 if(strlen($_POST['date']) < 1){$errors[] = "Het email adress klopt niet";}
 
                 if(count($errors) == 0){
-                    $db->doquery("INSERT INTO {{table}} SET $home, $away, $scoreAway, $scoreHome, $playTime, $date","games");
+
+                    $update = new Update();
+                    $update->setDb($db)
+                        ->setType("insert")
+                        ->addUpdate("team_home",$_POST['team_home'])
+                        ->addUpdate("team_away",$_POST['team_away'])
+                        ->addUpdate("score_home",$_POST['score_home'])
+                        ->addUpdate("score_away",$_POST['score_away'])
+                        ->addUpdate("played_time",$_POST['played_time'])
+                        ->addUpdate("date",$_POST['date'])
+                        ->setTable("games")
+                        ->doquery();
+                    echo "Toegevoegd";
                 }else{
                     $values = [
                         "team_home"=>$_POST['team_home'],
@@ -50,24 +54,29 @@
                 }
             }
 
-
-                $sqlTeams = $db->doquery("SELECT * FROM {{table}}","teams");
-                $row = mysqli_fetch_array($sqlTeams);
-                //echo $row['name'] ;
-
             ?>
             <form method="post" action="" target="_top">
-                <?php
+                <label for="team_home">Thuis team</label>
+                <select name="team_home" id="team_home" class="form-control" required>
+                    <?php
+                        $sqlTeams = $db->doquery("SELECT * FROM {{table}}","teams");
+                        while($row = mysqli_fetch_array($sqlTeams)){
+                            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+                        }
+                    ?>
+                </select>
+                <label for="score_home">Score Thuis</label>
+                <input name="score_home"  id="score_home" value="<?php echo $values['score_home'];?>" class="form-control" required>
 
-                    while(mysqli_fetch_array($sqlTeams)){
-                        echo $row['name'];
+                <label for="team_away">Gast team</label>
+                <select name="team_away" id="team_away" class="form-control" required>
+                    <?php
+                    $sqlTeams = $db->doquery("SELECT * FROM {{table}}","teams");
+                    while($row = mysqli_fetch_array($sqlTeams)){
+                        echo "<option value='".$row['id']."'>".$row['name']."</option>";
                     }
-
-
-                ?>
-                <label for="team_home">Thuis team</label><input name="team_home" id="team_home" value="<?php echo $row['name'];?>"  type="text" class="form-control" required/>
-                <label for="score_home">Score Thuis</label><input name="score_home"  id="score_home" value="<?php echo $values['score_home'];?>" class="form-control" required>
-                <label for="team_away">Gast team</label><input name="team_away" id="team_away" value="<?php echo $row['name'];?>" type="text" class="form-control" required/>
+                    ?>
+                </select>
                 <label for="score_away">Score Gast</label><input name="score_away"  id="score_away" value="<?php echo $values['score_away'];?>" class="form-control" required>
                 <label for="played_time">Speeltijd</label><input name="played_time"  id="played_time" value="<?php echo $values['played_time'];?>" class="form-control" required>
                 <label for="date">datum</label><input name="date"  id="date" value="<?php echo $values['date'];?>" class="form-control" required>
@@ -78,9 +87,8 @@
             </form>
         </div>
     </div>
-
+</div>
     <script>
-
         jQuery('#date').datetimepicker({
             minDate: 0
         });

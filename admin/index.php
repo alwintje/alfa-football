@@ -70,6 +70,7 @@ if(isset($_GET['logout'])){
             $menu = array(
                 "#reviews"      =>  "Artikelen",
                 "#admin_games"  =>  "Wedstrijden",
+                "#teams"        =>  "Teams",
                 "#tokens"       =>  "Tokens",
                 "admin/?logout" =>  "loguit",
             );
