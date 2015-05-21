@@ -74,6 +74,7 @@ if(isset($_GET['logout'])){
             require_once("../".$includeFolder."Header.php");
             require_once($includeFolder."Reviews.php");
             require_once($includeFolder."Games.php");
+            require_once($includeFolder."Teams.php");
             require_once($includeFolder . "Tokens.php");
 
         }
