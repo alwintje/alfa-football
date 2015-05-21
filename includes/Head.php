@@ -27,8 +27,8 @@
             "css/bootstrap.css",
             "css/index.css",
             "css/header.css",
-            "css/contents.css",
             "css/component.css",
+            "css/contents.css",
         ];
 
         foreach($stylesheets as $val) {

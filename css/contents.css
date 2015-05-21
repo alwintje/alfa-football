@@ -1,4 +1,6 @@
-
+body{
+    background: #123046;
+}
 .container{
     min-height: 500px;
     color: #ddd;
