@@ -33,11 +33,11 @@
                     if(isset($_POST['addReview'])){
 
                         $title = "title='".$db->esc_str($_POST['title'])."'";
-                        $intro = "intro='".mysql_real_escape_string($_POST['intro'])."'";
-                        $content = "content='".mysql_real_escape_string($_POST['content'])."'";
-                        $author = "author='".mysql_real_escape_string($_POST['author'])."'";
-                        $date = "rev_date='".mysql_real_escape_string($_POST['rev_date'])."'";
-                        $image = "image='".mysql_real_escape_string($_POST['image'])."'";
+                        $intro = "intro='".$db->esc_str($_POST['intro'])."'";
+                        $content = "content='".$db->esc_str($_POST['content'])."'";
+                        $author = "author='".$db->esc_str($_POST['author'])."'";
+                        $date = "rev_date='".$db->esc_str($_POST['rev_date'])."'";
+                        $image = "image='".$db->esc_str($_POST['image'])."'";
 
 
 
@@ -74,7 +74,7 @@
 <!--                <label for="content">Bericht</label><textarea name="content" value="--><?php //echo $values['content'];?><!--" id="content" class="form-control"></textarea>-->
                  <label>Bericht</label>
                 <textarea name="content" style="display: none;" id="text"></textarea>
-                <div contenteditable="true" class="form-control" id="text_div" class="editable-div"
+                <div contenteditable="true" class="form-control editable-div" id="text_div"
                      onkeyup="document.querySelector('#text').innerHTML = document.querySelector('#text_div').innerHTML;"><?php echo $values['content'];?>
                 </div>
 
