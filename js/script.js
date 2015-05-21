@@ -19,7 +19,6 @@ $(document).ready(function (){
                 data: {collumn: collumn,table: table,search: searchString},
                 dataType: 'json'
             }).done(function(data){
-
                 searchContent.style.display = "block";
                 searchContent.innerHTML = "";
                 if(data.length == 0){

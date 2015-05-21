@@ -16,9 +16,8 @@
                 <?php
 
                     if(isset($_GET['deleteReview'])){
-
-                        $db->doquery("UPDATE {{table}} SET deleted='true' WHERE id='".$_GET['deleteReview']."'","reviews");
-                        header("location: #reviews");
+                        $db->doquery("UPDATE {{table}} SET deleted=TRUE WHERE id='".$_GET['deleteReview']."'","reviews");
+                        //$db->doquery("DELETE FROM {{table}} WHERE id='".$_GET['deleteReview']."'","reviews");
                     }
                     $values = [
                         "title"     =>  "",
@@ -138,7 +137,7 @@
                 <?php
                     if($sendValues['del']){
                 ?>
-                    <input type="button" class="btn btn-default" name="deleteReview" onclick="location.href = 'admin/deleteReview=<?=$_GET['editRev']?>#reviews'" value="Verwijder" />
+                    <input type="button" class="btn btn-default" name="deleteReview" onclick="location.href = 'admin/?deleteReview=<?=$_GET['editRev']?>#reviews'" value="Verwijder" />
                 <?php
                     }
 

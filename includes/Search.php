@@ -79,8 +79,8 @@ class Search{
         }
 
         //$query = $db->doquery("SELECT * FROM {{table}} WHERE content LIKE '%te%' COLLATE utf8_general_ci",$this->table);
-        $query = $db->doquery("SELECT * FROM {{table}} WHERE $string ",$this->table);
-
+        $query = $db->doquery("SELECT * FROM {{table}} WHERE ($string) AND deleted=0 ORDER BY id DESC LIMIT 15",$this->table);
+        //return "SELECT * FROM {{table}} WHERE ($string) AND deleted=FALSE ORDER BY id DESC LIMIT 15";
         $list = [];
 //        $list[] = $this->collumn;
 //        $list[] = $this->table;

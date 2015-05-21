@@ -16,7 +16,7 @@
                 <?php
                     $reviews = new Reviews();
 
-                    $query = $db->doquery("SELECT * FROM {{table}} ORDER BY rev_date DESC LIMIT 10","reviews");
+                    $query = $db->doquery("SELECT * FROM {{table}} WHERE deleted='0' ORDER BY rev_date DESC LIMIT 10","reviews");
 
                     while($row = mysqli_fetch_array($query)){
 

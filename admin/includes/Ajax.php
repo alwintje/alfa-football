@@ -9,7 +9,7 @@ require_once("../../includes/Database.php");
 $db = new Database();
 $db->opendb();
 if(isset($_GET['reviews'])){
-    $sql = $db->doquery("SELECT * FROM {{table}} ORDER BY rev_date DESC LIMIT ".$_POST['start'].",".$_POST['end'], "reviews");
+    $sql = $db->doquery("SELECT * FROM {{table}} WHERE deleted=0 ORDER BY rev_date DESC LIMIT ".$_POST['start'].",".$_POST['end'], "reviews");
     $list = [];
     while($row = mysqli_fetch_array($sql)){
         $i = count($list);
@@ -19,7 +19,7 @@ if(isset($_GET['reviews'])){
 
 }
 if(isset($_GET['reviewsMax'])){
-    $sql = $db->doquery("SELECT id FROM {{table}}", "reviews");
+    $sql = $db->doquery("SELECT id FROM {{table}} WHERE deleted=0", "reviews");
     echo mysqli_num_rows($sql);
 }
 ?>
