@@ -17,11 +17,6 @@ function reviews(){
     var content = document.querySelector("#reviewContents");
     content.innerHTML = "";
 
-    $.ajax({
-        url: "admin/includes/Ajax.php?reviewsMax"
-    }).done(function(data){
-        rev_max = data;
-    });
 
     $.ajax({
         type: "POST",
@@ -35,7 +30,6 @@ function reviews(){
 
         for(var i =0;i < data.length;i++){
             //createDivs(searchContent, "<a href='?readMore="+data[i].id+"'>"+data[i].title+"</a> <br />");
-            console.log(data[i].title);
             var tr = document.createElement("tr");
             var td = document.createElement("td");
             td.innerHTML = data[i].title;
@@ -49,14 +43,33 @@ function reviews(){
 
         //console.log(data);
     });
-    if(rev_max > rev_end){
-        var bttnNext = document.createElement("input");
-        bttnNext.type = "button";
-        content.appendChild(bttnNext);
-        bttnNext.onclick = function(){
-            console.log("moioi");
+
+
+    $.ajax({
+        url: "admin/includes/Ajax.php?reviewsMax"
+    }).done(function(data){
+        rev_max = data;
+        if(rev_max > rev_end){
+
+            // button previous
+            var bttnPrev = document.createElement("input");
+            bttnPrev.type = "button";
+            bttnPrev.value = "Vorige";
+            content.appendChild(bttnPrev);
+
+            bttnPrev.onclick = function(){
+                console.log("prev");
+            };
+
+            // button next
+            var bttnNext = document.createElement("input");
+            bttnNext.type = "button";
+            bttnNext.value = "Volgende";
+            content.appendChild(bttnNext);
+
+            bttnNext.onclick = function(){
+                console.log("Next");
+            };
         }
-    }
-
-
+    });
 }

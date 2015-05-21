@@ -42,7 +42,7 @@ if(isset($_GET['logout'])){
     <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css"/ >
 
     <script src="js/menu.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/jquery.datetimepicker.js"></script>
     <script src="admin/js/script.js"></script>
 

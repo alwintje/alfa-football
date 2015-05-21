@@ -36,6 +36,9 @@
 .container:nth-of-type(1), .container:nth-of-type(3), .container:nth-of-type(5), .container:nth-of-type(7){
     background: #123046;
 }
+.container:nth-of-type(0), .container:nth-of-type(2), .container:nth-of-type(4), .container:nth-of-type(6), .container:nth-of-type(8){
+    background: #123046;
+}
 .container .content .table{
     width: 100%;
     border-spacing: 0;
