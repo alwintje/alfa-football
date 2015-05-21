@@ -14,6 +14,12 @@
     <div class="content">
         <div class="form">
                 <?php
+
+                    if(isset($_GET['deleteReview'])){
+
+                        $db->doquery("UPDATE {{table}} SET deleted='true' WHERE id='".$_GET['deleteReview']."'","reviews");
+                        header("location: #reviews");
+                    }
                     $values = [
                         "title"     =>  "",
                         "intro"     =>  "",
@@ -52,13 +58,8 @@
                 ?>
             <form method="post" action="<?php echo $sendValues['sendUrl'] ?>" target="_top" >
                 <?php
-                    if(isset($_POST['addReview']) || isset($_POST['editReview']) || (isset($_POST['deleteReview']) && isset($_GET['editRev']))){
+                    if(isset($_POST['addReview']) || isset($_POST['editReview'])){
 
-                        if(isset($_POST['deleteReview'])){
-
-                            $db->doquery("UPDATE {{table}} SET deleted='true' WHERE id='".$_GET['editRev']."'","reviews");
-                            header("location: #reviews");
-                        }
                         $user = $security->checksession();
 
                         $title      = "title='".$db->esc_str($_POST['title'])."'";
@@ -137,7 +138,7 @@
                 <?php
                     if($sendValues['del']){
                 ?>
-                    <input type="submit" class="btn btn-default" name="deleteReview" value="Verwijder" />
+                    <input type="button" class="btn btn-default" name="deleteReview" onclick="location.href = 'admin/deleteReview=<?=$_GET['editRev']?>#reviews'" value="Verwijder" />
                 <?php
                     }
 
