@@ -47,18 +47,18 @@
                             "sendBttn"  =>  "Wijzig",
                             "del"  =>  true,
                         ];
-                        if(isset($_POST['deleteReview'])){
-
-                            $db->doquery("UPDATE {{table}} SET deleted='true' WHERE id='".$_GET['editRev']."'","reviews");
-                            header("location: #reviews");
-                        }
 
                     }
                 ?>
             <form method="post" action="<?php echo $sendValues['sendUrl'] ?>" target="_top" >
                 <?php
-                    if(isset($_POST['addReview']) || isset($_POST['editReview'])){
+                    if(isset($_POST['addReview']) || isset($_POST['editReview']) || (isset($_POST['deleteReview']) && isset($_GET['editRev']))){
 
+                        if(isset($_POST['deleteReview'])){
+
+                            $db->doquery("UPDATE {{table}} SET deleted='true' WHERE id='".$_GET['editRev']."'","reviews");
+                            header("location: #reviews");
+                        }
                         $user = $security->checksession();
 
                         $title      = "title='".$db->esc_str($_POST['title'])."'";
