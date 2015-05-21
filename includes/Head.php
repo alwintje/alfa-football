@@ -39,6 +39,15 @@
             echo "<link rel='stylesheet' type='text/css' href='" . $val . "' />\n";
         }
         echo "\n";
+
+        $jsFiles = [
+            "js/menu",
+            "js/jquery.min",
+            "js/smooth-scroll",
+        ];
+    foreach($jsFiles as $val) {
+        echo "<script src='".$val.".js'></script>\n";
+    }
         foreach($head['jsFiles'] as $val) {
             if($val == "js"){
                 echo "<script>";

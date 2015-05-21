@@ -31,10 +31,6 @@ $head['javascript'] = "
         var transition = 'easeInCirc';
 ";
 $head['jsFiles'][] = "js/modernizr.custom";
-$head['jsFiles'][] = "js/menu";
-$head['jsFiles'][] = "js/jquery.min";
-$head['jsFiles'][] = "js/smooth-scroll";
-$head['jsFiles'][] = "js/modernizr.custom";
 $head['jsFiles'][] = "js";
 $head['jsFiles'][] = "js/slider";
 $head['jsFiles'][] = "js/script";

@@ -41,36 +41,36 @@ $head['javascript'] = "
         offset: 120
     });
 ";
-$head['jsFiles'][] = "js/menu";
-$head['jsFiles'][] = "js/jquery.min";
 $head['jsFiles'][] = "js/datetimepicker.min";
 $head['jsFiles'][] = "admin/js/script";
-$head['jsFiles'][] = "js/smooth-scroll";
+$head['jsFiles'][] = "";
 $head['jsFiles'][] = "js";
+
+
 
 require_once("../".$includeFolder."Head.php");
 
-        if($security->checksession() == false){
-            $menu = array(
-                "?"  =>  "Terug naar de website",
-            );
-            require_once("../".$includeFolder."Header.php");
-            require_once($includeFolder."Login.php");
-        }else{
-            $menu = array(
-                "#reviews"      =>  "Artikelen",
-                "#admin_games"  =>  "Wedstrijden",
-                "#teams"        =>  "Teams",
-                "#tokens"       =>  "Tokens",
-                "admin/?logout" =>  "loguit",
-            );
-            require_once("../".$includeFolder."Header.php");
-            require_once($includeFolder."Reviews.php");
-            require_once($includeFolder."Games.php");
-            require_once($includeFolder."Teams.php");
-            require_once($includeFolder . "Tokens.php");
-            require_once("../".$includeFolder . "Footer.php");
+    if($security->checksession() == false){
+        $menu = array(
+            "?"  =>  "Terug naar de website",
+        );
+        require_once("../".$includeFolder."Header.php");
+        require_once($includeFolder."Login.php");
+    }else{
+        $menu = array(
+            "#reviews"      =>  "Artikelen",
+            "#admin_games"  =>  "Wedstrijden",
+            "#teams"        =>  "Teams",
+            "#tokens"       =>  "Tokens",
+            "admin/?logout" =>  "loguit",
+        );
+        require_once("../".$includeFolder."Header.php");
+        require_once($includeFolder."Reviews.php");
+        require_once($includeFolder."Games.php");
+        require_once($includeFolder."Teams.php");
+        require_once($includeFolder . "Tokens.php");
+        require_once("../".$includeFolder . "Footer.php");
 
-        }
+    }
 
-    ?>
+?>
