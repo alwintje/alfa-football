@@ -48,7 +48,7 @@
                         <td> <?php echo $row['team_home']; ?></td>
                         <td> <?php echo $row['team_away']; ?></td>
                         <td> <?php echo $row['date'];?></td>
-                        <td> <?php echo $row['end_date'];?></td>
+                        <td> <?php echo $row['played_time'];?></td>
                          <?php
                               }
                          }
@@ -74,7 +74,7 @@
                             <td> <?php echo $row['team_home']; ?></td>
                             <td> <?php echo $row['team_away']; ?></td>
                             <td> <?php echo $row['date'];?></td>
-                            <td> <?php echo $row['end_date'];?></td>
+                            <td> <?php echo $row['played_time'];?></td>
                             <?php
                                 }
                             }
