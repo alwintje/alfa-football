@@ -79,23 +79,16 @@ class Search{
         }
 
         //$query = $db->doquery("SELECT * FROM {{table}} WHERE content LIKE '%te%' COLLATE utf8_general_ci",$this->table);
-        $query = $db->doquery("SELECT * FROM {{table}} WHERE $string ORDER BY id DESC LIMIT 15",$this->table);
-
+        $query = $db->doquery("SELECT * FROM {{table}} WHERE ($string) AND deleted=0 ORDER BY id DESC LIMIT 15",$this->table);
+        //return "SELECT * FROM {{table}} WHERE ($string) AND deleted=FALSE ORDER BY id DESC LIMIT 15";
         $list = [];
 //        $list[] = $this->collumn;
 //        $list[] = $this->table;
 //        $list[] = $this->searchString;
 //        $list[] = "SELECT * FROM {{table}} WHERE ".$this->collumn." LIKE '%".$this->searchString."%' COLLATE utf8_general_ci";
         while($row = mysqli_fetch_array($query)){
-            if(isset($row['deleted'])){
-                if($row['deleted'] == false){
-                    $i = count($list);
-                    $list[$i] = $row;
-                }
-            }else{
-                $i = count($list);
-                $list[$i] = $row;
-            }
+            $i = count($list);
+            $list[$i] = $row;
         }
         return $list;
     }
