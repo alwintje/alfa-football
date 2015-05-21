@@ -76,7 +76,7 @@
                     <?php echo $values['content'];?>
                 </div>
 
-                <label for="rev_date">Datum</label><br/><input name="rev_date" value="<?php echo $values['rev_date'];?>" id="rev_date" class="form-control"><br/>
+                <label for="rev_date">Datum</label><br/><input name="rev_date" value="<?php echo $values['date'];?>" id="rev_date" class="form-control" required="required"><br/>
                 <label for="image">Afbeelding</label><input name="image" value="<?php echo $values['image'];?>" id="image" class="form-control" >
                 <br />
                 <input type="submit" class="btn btn-default" name="addReview" value="Verstuur"/>
@@ -94,8 +94,6 @@
 <script>
 
     jQuery('#rev_date').datetimepicker({
-        inline:true,
-        theme:'dark',
         minDate: 0
     });
 </script>
