@@ -1,4 +1,4 @@
-<div id="add_games" class="scroll-url container">
+<div id="admin_games" class="scroll-url container">
     <div class="head">
         <h1>Voeg een wedstrijd toe</h1>
     </div>
@@ -39,9 +39,11 @@
             ?>
             <form method="post" action="#contact">
                 <label for="name">Thuis team</label><input name="name" id="name" value="<?php echo $values['name'];?>"  type="text" class="form-control" required/>
-                <label for="message">Score Thuis</label><textarea name="message"  id="message" value="<?php echo $values['message'];?>" class="form-control" required></textarea>
+                <label for="message">Score Thuis</label><input name="message"  id="message" value="<?php echo $values['message'];?>" class="form-control" required>
                 <label for="email">Gast team</label><input name="email" id="email" value="<?php echo $values['email'];?>" type="text" class="form-control" required/>
-                <label for="message">Score Gast</label><textarea name="message"  id="message" value="<?php echo $values['message'];?>" class="form-control" required></textarea>
+                <label for="message">Score Gast</label><input name="message"  id="message" value="<?php echo $values['message'];?>" class="form-control" required>
+                <label for="message">Speeltijd</label><input name="message"  id="message" value="<?php echo $values['message'];?>" class="form-control" required>
+                <label for="message">date</label><input name="message"  id="message" value="<?php echo $values['message'];?>" class="form-control" required>
                 <br />
                 <input class="btn btn-default" type="submit" name="contact" value="Verzenden">
                 <br />
