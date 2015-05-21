@@ -83,6 +83,9 @@
       <h1>Reviews</h1>
 
     </div>
+    <div class="content" id="reviewContents">
+
+    </div>
 </div>
 
 
