@@ -1,4 +1,4 @@
-<div id="games" class="scroll-url container">
+<div id="add_games" class="scroll-url container">
     <div class="form">
        <?php
 
