@@ -60,11 +60,13 @@
                 <?php
                 while ($row = mysqli_fetch_array($query)) {
 
+                    $phpDate = strtotime( $row['date'] );
+                    $mysqlDate = date( 'd-m-Y H:i', $phpDate );
                 ?>
                     <tr>
-                        <td> <?php echo $teams[$row['team_home']] ?></td>
-                        <td> <?php echo $teams[$row['team_away']] ?></td>
-                        <td> <?php echo $row['date']; ?></td>
+                        <td> <?php echo $teams[$row['team_home']]; ?></td>
+                        <td> <?php echo $teams[$row['team_away']]; ?></td>
+                        <td> <?php echo $mysqlDate; ?></td>
                         <td> <?php echo $row['played_time']; ?> minuten</td>
                         <td> <?php echo $row['score_home']; ?> - <?php echo $row['score_away']; ?></td>
                     </tr>
@@ -96,11 +98,13 @@
                 <tbody>
                 <?php
                     while ($row = mysqli_fetch_array($query)) {
+                        $phpDate = strtotime( $row['date'] );
+                        $mysqlDate = date( 'd-m-Y H:i', $phpDate );
                 ?>
                     <tr>
-                        <td> <?php echo $teams[$row['team_home']] ?></td>
-                        <td> <?php echo $teams[$row['team_away']] ?></td>
-                        <td> <?php echo $row['date']; ?></td>
+                        <td> <?php echo $teams[$row['team_home']]; ?></td>
+                        <td> <?php echo $teams[$row['team_away']]; ?></td>
+                        <td> <?php echo $mysqlDate; ?></td>
                     </tr>
                 <?php
                     }
