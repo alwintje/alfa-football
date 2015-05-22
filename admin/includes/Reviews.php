@@ -155,7 +155,8 @@
                        class="form-control"
                        required="required">
                 <br/>
-                <label for="image">Afbeelding</label><input name="image" value="<?php echo $values['image'];?>" id="image" class="form-control" >
+                <label for="image">Afbeelding</label>
+                <input name="image" value="<?php echo $values['image'];?>" id="image" class="form-control" >
                 <br />
                 <input type="submit" class="btn btn-default" name="<?php
                     echo $sendValues['sendName'];
