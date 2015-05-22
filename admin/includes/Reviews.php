@@ -126,21 +126,35 @@
                     }
                 ?>
 
-                <label for="title">Titel</label><input name="title" id="title" value="<?php echo $values['title'];?>" type="text" class="form-control"/>
+                <label for="title">Titel</label>
+                <input name="title" id="title" value="<?=$values['title']?>" type="text" class="form-control"/>
+
                 <label for="intro">Inleiding</label>
                 <textarea name="intro" style="display: none;" id="intro"><?php echo $values['intro'];?></textarea>
-                <div contenteditable="true" class="form-control editable-div" id="intro_div"
-                     onkeyup="document.querySelector('#intro').innerHTML = document.querySelector('#intro_div').innerHTML;">
-                    <?php echo $values['intro'];?>
-                </div>
+                <div contenteditable="true"
+                     class="form-control editable-div"
+                     id="intro_div"
+                     onkeyup="
+                        document.querySelector('#intro').innerHTML = document.querySelector('#intro_div').innerHTML;
+                     "><?php echo $values['intro'];?></div>
+
                  <label>Bericht</label>
                 <textarea name="content" style="display: none;" id="text"><?php echo $values['content'];?></textarea>
-                <div contenteditable="true" class="form-control editable-div" id="text_div"
-                     onkeyup="document.querySelector('#text').innerHTML = document.querySelector('#text_div').innerHTML;">
-                    <?php echo $values['content'];?>
-                </div>
+                <div contenteditable="true"
+                     class="form-control editable-div"
+                     id="text_div"
+                     onkeyup="
+                        document.querySelector('#text').innerHTML = document.querySelector('#text_div').innerHTML;
+                     "><?php echo $values['content'];?></div>
 
-                <label for="rev_date">Datum</label><br/><input name="rev_date" autocomplete="off" value="<?php echo $values['date'];?>" id="rev_date" class="form-control" required="required"><br/>
+                <label for="rev_date">Datum</label><br/>
+                <input name="rev_date"
+                       autocomplete="off"
+                       value="<?php echo $values['date'];?>"
+                       id="rev_date"
+                       class="form-control"
+                       required="required">
+                <br/>
                 <label for="image">Afbeelding</label><input name="image" value="<?php echo $values['image'];?>" id="image" class="form-control" >
                 <br />
                 <input type="submit" class="btn btn-default" name="<?php

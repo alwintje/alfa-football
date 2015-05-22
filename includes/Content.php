@@ -195,7 +195,7 @@
                     <input name="email" id="email" value="<?php echo $values['email'];?>" type="text" class="form-control" required/>
 
                     <label for="message">Bericht</label>
-                    <textarea name="message"  id="message" class="form-control" required><?php echo $values['message'];?></textarea>
+                    <textarea name="message"  id="message" class="form-control" required ><?php echo $values['message'];?></textarea>
                     <br />
                     <input class="btn btn-default" type="submit" name="contact" value="Verzenden">
                     <br/>

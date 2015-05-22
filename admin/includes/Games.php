@@ -57,7 +57,7 @@
             ?>
             <form method="post" action="" target="_top">
                 <label for="team_home">Thuis team</label>
-                <select name="team_home" id="team_home" class="form-control" required>
+                <select name="team_home" id="team_home" class="form-control" required />
                     <?php
                         $sqlTeams = $db->doquery("SELECT * FROM {{table}} ORDER BY name ASC","teams");
                         while($row = mysqli_fetch_array($sqlTeams)){
@@ -66,10 +66,10 @@
                     ?>
                 </select>
                 <label for="score_home">Score Thuis</label>
-                <input name="score_home"  id="score_home" value="<?php echo $values['score_home'];?>" class="form-control" required>
+                <input name="score_home"  id="score_home" value="<?php echo $values['score_home'];?>" class="form-control" required />
 
                 <label for="team_away">Gast team</label>
-                <select name="team_away" id="team_away" class="form-control" required>
+                <select name="team_away" id="team_away" class="form-control" required />
                     <?php
                         $sqlTeams = $db->doquery("SELECT * FROM {{table}} ORDER BY name ASC","teams");
                         while($row = mysqli_fetch_array($sqlTeams)){
@@ -77,9 +77,15 @@
                         }
                     ?>
                 </select>
-                <label for="score_away">Score Gast</label><input name="score_away"  id="score_away" value="<?php echo $values['score_away'];?>" class="form-control" required>
-                <label for="played_time">Speeltijd</label><input name="played_time"  id="played_time" value="<?php echo $values['played_time'];?>" class="form-control" required>
-                <label for="date">datum</label><input name="date" autocomplete="off" id="date" value="<?php echo $values['date'];?>" class="form-control" required>
+                <label for="score_away">Score Gast</label>
+                <input name="score_away"  id="score_away" value="<?php echo $values['score_away'];?>" class="form-control" required />
+
+                <label for="played_time">Speeltijd</label>
+                <input name="played_time"  id="played_time" value="<?php echo $values['played_time'];?>" class="form-control" required />
+
+                <label for="date">datum</label>
+                <input name="date" autocomplete="off" id="date" value="<?php echo $values['date'];?>" class="form-control" required />
+
                 <br />
                 <input class="btn btn-default" type="submit" name="games" value="Verzenden">
                 <br />

@@ -29,6 +29,7 @@
             "css/header.css",
             "css/component.css",
             "css/contents.css",
+            "css/responsive.css",
         ];
 
         foreach($stylesheets as $val) {
@@ -39,7 +40,7 @@
             echo "<link rel='stylesheet' type='text/css' href='" . $val . "' />\n";
         }
         echo "\n";
-
+        echo "<link rel='stylesheet' type='text/css' href='css/responsive.css' />";
         $jsFiles = [
             "js/menu",
             "js/jquery.min",
@@ -59,6 +60,5 @@
         }
         $javascript = [];
     ?>
-
 </head>
 <body>

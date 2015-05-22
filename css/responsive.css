@@ -1,0 +1,101 @@
+
+
+
+
+
+@media only screen and (max-width: 1400px) {
+
+    .slider .arrows {
+        margin-left: -500px;
+        width: 1000px;
+    }
+    .slider .slides ul li .all {
+        font-size: 25px;
+        width: 900px;
+        margin-left: -450px;
+    }
+    .slider .slides ul li .text {
+        width: 900px;
+        margin-left: -450px;
+        font-size: 22px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+
+
+    #header .inner{
+        width: 850px;
+    }
+
+    .container .head{
+        width: 900px;
+    }
+    .container .content{
+        width: 900px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .slider .arrows {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+    .slider .slides ul li .all {
+        width: 80%;
+        margin-left: 0;
+        left: 10%;
+        font-size: 20px;
+    }
+    .slider .slides ul li .text {
+        width: 100%;
+        margin-left: 0;
+        left: 0;
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 900px) {
+
+
+    #header .inner{
+        width: 100%;
+    }
+    #header .inner .navigation ul{
+        height: 40px;
+        overflow: hidden;
+        cursor: pointer;
+        padding: 10px 20px 20px 20px;
+
+    }
+    #header .inner .navigation ul:before{
+        content: "Menu";
+        font-size: 20px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+    }
+    #header .inner .navigation ul:hover{
+        height: auto;
+        background: rgba(0,138,172,1);
+    }
+    #header .inner .navigation ul li{
+        display: block;
+        font-size: 20px;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+        color: #000;
+        padding-left: 0;
+    }
+    #header .inner .navigation #searchContent{
+        width: auto;
+    }
+
+    .container .head{
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+    }
+    .container .content{
+        width: 100%;
+        padding: 10px;
+    }
+}
+

@@ -18,6 +18,12 @@
 .codrops-header .background img {
 
 }
+.codrops-header{
+    z-index: 10;
+}
+#boxgallery.boxgallery nav{
+    z-index: 9000;
+}
 /* slider */
 .slider .background{
     background-color: #123046  ;
@@ -26,10 +32,10 @@
 
 .slider .arrows {
     left: 50%;
-    margin-left: -600px;
+    margin-left: -650px;
     opacity: 0.3;
     transition: all 0.2s ease 0s;
-    width: 1200px;
+    width: 1300px;
     top: 276px;
 }
 .slider:hover .arrows{
@@ -45,8 +51,8 @@
 .slider .slides ul li .all {
     position: absolute;
     left: 50%;
-    width: 1000px;
-    margin-left: -500px;
+    width: 1200px;
+    margin-left: -600px;
     font-family: arial, serif;
     font-size: 40px;
     font-weight: 400;
@@ -59,8 +65,8 @@
 .slider .slides ul li .text {
     position: absolute;
     left: 50%;
-    width: 1000px;
-    margin-left: -500px;
+    width: 1200px;
+    margin-left: -600px;
     font-family: arial, serif;
     font-size: 25px;
     font-weight: 400;
