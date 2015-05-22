@@ -53,6 +53,7 @@
                     <th>Uit</th>
                     <th>Datum</th>
                     <th>Gespeelde tijd</th>
+                    <th>Uitslag</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -64,7 +65,8 @@
                         <td> <?php echo $teams[$row['team_home']] ?></td>
                         <td> <?php echo $teams[$row['team_away']] ?></td>
                         <td> <?php echo $row['date']; ?></td>
-                        <td> <?php echo $row['played_time']; ?></td>
+                        <td> <?php echo $row['played_time']; ?> minuten</td>
+                        <td> <?php echo $row['score_home']; ?> - <?php echo $row['score_away']; ?></td>
                     </tr>
                 <?php
                 }
@@ -75,7 +77,7 @@
         }
         ?>
     </div>
-    <div class="head">
+    <div class="head coming_games">
         <h1>Aankomende wedstrijden</h1>
     </div>
     <div class="content">
@@ -89,7 +91,6 @@
                     <th>Thuis</th>
                     <th>Uit</th>
                     <th>Datum</th>
-                    <th>Gespeelde tijd</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -100,7 +101,6 @@
                         <td> <?php echo $teams[$row['team_home']] ?></td>
                         <td> <?php echo $teams[$row['team_away']] ?></td>
                         <td> <?php echo $row['date']; ?></td>
-                        <td> <?php echo $row['played_time']; ?></td>
                     </tr>
                 <?php
                     }
@@ -143,11 +143,11 @@
             <h1>Contact</h1>
         </div>
         <div class="content">
-            <p> Plaats:  Hardenberg </p>
-            <p> adress: straat 7, 7676AK  </p>
-            <p> Tell: 06 203 233 99  </p>
-            <p> Email: alfa@informatie.nl  </p><br>
-            <p>Of stuur ons een mail!</p>
+            <p> Plaats: Hardenberg </p>
+            <p> adress: straat 7, 7676AK </p>
+            <p> Tell: 06 203 233 99 </p>
+            <p> Email: alfa@informatie.nl </p><br>
+            <p> Of stuur ons een mail! </p>
             <br>
             <div class="form">
                 <?php
