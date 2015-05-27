@@ -155,9 +155,9 @@
             <br>
             <div class="form">
                 <?php
-                require_once("Database.php");
-                $db = new Database();
-                $db->opendb();
+                //require_once("Database.php");
+                //$db = new Database();
+                //$db->opendb();
 
                 $values = [
                     "name"=>"",
@@ -177,7 +177,7 @@
                     if(strlen($_POST['email']) < 4){$errors[] = "Het email adress klopt niet";}
 
                     if(count($errors) == 0){
-                        $db->doquery("INSERT INTO {{table}} SET $name, $message, $email ","contact");
+                        //$db->doquery("INSERT INTO {{table}} SET $name, $message, $email ","contact");
                     }else{
                         $values = [
                             "name"=>$_POST['name'],
